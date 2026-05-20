@@ -899,6 +899,32 @@
             line-height: 1.75;
         }
 
+        /* ── MÉTODOS DE PAGAMENTO ── */
+        .payment-methods {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+
+        .pay-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 50px;
+            padding: 6px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--light-gray);
+        }
+
+        .pay-badge svg { flex-shrink: 0; }
+
         /* ── FINAL CTA ── */
         .final-cta-box {
             background: var(--graphite);
@@ -1885,7 +1911,7 @@
                     <div class="faq-body-v">
                         <div class="faq-body-inner-v">
                             É simples. Manda uma mensagem pelo WhatsApp com o CPF ou CNPJ
-                            e o serviço que quer. Confirmamos o pagamento via Pix e começamos na hora.
+                            e o serviço que quer. Confirmamos o pagamento (Pix ou cartão parcelado) e começamos na hora.
                             O relatório chega no seu WhatsApp ou e-mail dentro do prazo combinado.
                         </div>
                     </div>
@@ -1933,8 +1959,28 @@
                    target="_blank" rel="noopener" class="cta-btn" style="margin: 0 auto;">
                     Quero proteger minha decisão agora
                 </a>
-                <p class="cta-note" style="margin-top:14px;">
-                    Pagamento via Pix · Entrega no prazo ou reembolso integral
+                <div class="payment-methods">
+                    <span class="pay-badge">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+                        </svg>
+                        Cartão em até 12x
+                    </span>
+                    <span class="pay-badge">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+                        </svg>
+                        Pix à vista
+                    </span>
+                    <span class="pay-badge">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        Mercado Pago
+                    </span>
+                </div>
+                <p class="cta-note" style="margin-top:10px;">
+                    Entrega garantida no prazo ou reembolso integral
                 </p>
             </div>
         </div>
