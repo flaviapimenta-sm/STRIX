@@ -95,6 +95,7 @@
             cursor: pointer;
             transition: all var(--t);
             border: none;
+            border-radius: 50px;
         }
 
         .btn-primary   { background: var(--white);     color: var(--black); }
@@ -269,7 +270,7 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 680px;
+            max-width: 780px;
         }
 
         .hero-label {
@@ -294,13 +295,38 @@
             color: var(--gray);
             margin-bottom: 40px;
             line-height: 1.65;
-            max-width: 500px;
+            max-width: 660px;
         }
 
         .hero-ctas {
             display: flex;
             gap: 14px;
             flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .hero-reply-note {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 14px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-reply-dot {
+            width: 6px;
+            height: 6px;
+            background: #25D366;
+            border-radius: 50%;
+            flex-shrink: 0;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50%       { opacity: 0.4; }
         }
 
         .hero-badges {
@@ -546,7 +572,7 @@
             color: var(--white);
             text-align: center;
             border: 1.5px solid rgba(255,255,255,0.32);
-            border-radius: 2px;
+            border-radius: 50px;
             transition: background var(--t), color var(--t), border-color var(--t);
             cursor: pointer;
         }
@@ -1212,6 +1238,10 @@
                     </a>
                     <a href="vendas.html" class="btn btn-outline">Ver serviços e preços</a>
                 </div>
+                <p class="hero-reply-note">
+                    <span class="hero-reply-dot"></span>
+                    Respondemos em até 2 horas · Sem burocracia · Pelo WhatsApp
+                </p>
                 <div class="hero-badges">
                     <span class="hero-badge">100% fontes abertas e legais</span>
                     <span class="hero-badge">Sigilo total garantido</span>
