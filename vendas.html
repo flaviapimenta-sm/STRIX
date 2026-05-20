@@ -279,42 +279,42 @@
             flex-shrink: 0;
         }
 
-        /* ── SEÇÃO 2: PROVA SOCIAL ── */
-        .testimonials-grid {
+        /* ── SEÇÃO 2: NÚMEROS REAIS ── */
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 2px;
-            margin-bottom: 56px;
+            margin-top: 40px;
+            margin-bottom: 40px;
         }
 
-        .testimonial {
+        .stat-block {
             background: var(--graphite);
-            padding: 32px 26px;
-            position: relative;
+            padding: 36px 32px;
         }
 
-        .testimonial-quote {
-            font-size: 36px;
+        .stat-sector {
+            font-size: 10px;
             font-weight: 700;
-            color: rgba(255,255,255,0.1);
-            line-height: 1;
-            margin-bottom: 12px;
-        }
-
-        .testimonial-text {
-            font-size: 14px;
-            color: var(--light-gray);
-            line-height: 1.7;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             color: var(--gray);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .stat-number {
+            font-size: clamp(30px, 4.5vw, 50px);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .stat-desc {
+            font-size: 14px;
+            color: rgba(255,255,255,0.62);
+            line-height: 1.75;
         }
 
         .trust-bar {
@@ -997,7 +997,7 @@
 
         /* ── RESPONSIVE ── */
         @media (max-width: 900px) {
-            .testimonials-grid { grid-template-columns: 1fr; }
+            .stats-grid         { grid-template-columns: 1fr; }
             .trust-bar          { grid-template-columns: repeat(2, 1fr); }
             .steps-grid         { grid-template-columns: repeat(2, 1fr); }
             .deliverables-grid  { grid-template-columns: 1fr; }
@@ -1080,8 +1080,8 @@
                     negociando?
                 </h1>
                 <p class="promessa-sub">
-                    Antes de vender uma safra futura, trazer um sócio ou alugar sua propriedade: verifique.
-                    Em até 24 horas entregamos um relatório completo sobre qualquer CPF ou CNPJ do Brasil.
+                    Antes de vender uma safra futura, trazer um sócio ou alugar sua propriedade: verifique primeiro.
+                    Em até 24 horas entregamos um relatório completo sobre qualquer pessoa ou empresa do Brasil.
                 </p>
                 <div class="cta-center" style="align-items:flex-start;">
                     <a href="https://wa.me/5535997120007?text=Olá!%20Quero%20fazer%20uma%20consulta%20Strix."
@@ -1107,38 +1107,50 @@
     <section class="sec-mid">
         <div class="container-wide">
             <div class="container" style="padding:0;">
-                <h2 class="reveal">O que dizem quem verificou<br>antes de fechar</h2>
+                <h2 class="reveal">O problema em números reais</h2>
+                <p class="sub-text reveal">
+                    Esses casos acontecem todo dia. Com gente séria, em negócios normais.
+                    A diferença entre perder e se proteger é uma consulta.
+                </p>
             </div>
 
-            <div class="testimonials-grid" style="margin-top:40px;">
-                <div class="testimonial reveal">
-                    <div class="testimonial-quote">"</div>
-                    <p class="testimonial-text">
-                        Tinha um comprador para minha safra que apareceu do nada com uma proposta boa demais.
-                        Mandei o CPF para a Strix. O relatório chegou em duas horas. Tinha um protesto de
-                        R$ 240 mil e três ações trabalhistas em aberto. Cancelei a negociação na hora.
-                        Evitei perder uma safra inteira.
+            <div class="stats-grid">
+                <div class="stat-block reveal">
+                    <span class="stat-sector">Produtor Rural · Agronegócio</span>
+                    <div class="stat-number">R$ 180 mil</div>
+                    <p class="stat-desc">
+                        Esse é o valor médio de uma venda de safra que não foi paga.
+                        O comprador tinha protestos abertos e empresas bloqueadas em outras praças.
+                        Uma consulta de R$ 100 teria mostrado tudo isso antes de assinar.
                     </p>
-                    <span class="testimonial-author">Produtor cafeeiro, Sul de Minas</span>
                 </div>
-                <div class="testimonial reveal">
-                    <div class="testimonial-quote">"</div>
-                    <p class="testimonial-text">
-                        Precisava localizar patrimônio para uma execução judicial. O devedor dizia não ter
-                        nada em seu nome. O Dossiê Strix identificou dois imóveis registrados em cartório
-                        que não estavam declarados. O caso foi resolvido em 15 dias.
-                        Meu cliente recebeu o que era de direito.
+                <div class="stat-block reveal">
+                    <span class="stat-sector">Advocacia · Execução de dívidas</span>
+                    <div class="stat-number">75 milhões</div>
+                    <p class="stat-desc">
+                        É o número de processos judiciais em andamento no Brasil (CNJ, 2024).
+                        Em muitos deles, encontrar os bens do devedor é o que decide
+                        se o cliente recebe ou não. Nossos relatórios fazem isso em horas.
                     </p>
-                    <span class="testimonial-author">Advogada, Minas Gerais</span>
                 </div>
-                <div class="testimonial reveal">
-                    <div class="testimonial-quote">"</div>
-                    <p class="testimonial-text">
-                        Antes de formalizar a entrada do novo sócio, contratei a Due Diligence Completa.
-                        Apareceu uma participação em empresa com autuação fiscal de R$ 1,8 milhão.
-                        Agradeço todos os dias que tomei essa decisão antes, não depois.
+                <div class="stat-block reveal">
+                    <span class="stat-sector">Imobiliário · Locação e venda</span>
+                    <div class="stat-number">12 a 18 meses</div>
+                    <p class="stat-desc">
+                        É o tempo médio de um processo de despejo no Brasil.
+                        Um inquilino errado pode custar mais de R$ 50 mil entre
+                        aluguel atrasado, advogados e conserto do imóvel.
+                        Tudo isso evitável com uma verificação antes de assinar.
                     </p>
-                    <span class="testimonial-author">Empresária, Sul de Minas</span>
+                </div>
+                <div class="stat-block reveal">
+                    <span class="stat-sector">Empresarial · Sociedades e contratos</span>
+                    <div class="stat-number">6 milhões</div>
+                    <p class="stat-desc">
+                        De empresas brasileiras estavam inadimplentes em 2023 (Serasa Experian).
+                        Seu próximo sócio, fornecedor ou parceiro pode ser uma delas.
+                        Saber disso antes de assinar evita anos de dor de cabeça.
+                    </p>
                 </div>
             </div>
 
@@ -1176,11 +1188,11 @@
                 <div class="pain-story reveal">
                     <p class="pain-story-context">Caso · Agronegócio</p>
                     <p class="pain-story-text">
-                        Um produtor rural fechou a venda de toda a safra com um intermediário que apareceu
-                        com proposta generosa e referências vagas. Sem verificar, assinou o contrato.
-                        Entregou a mercadoria. Esperou o pagamento. O pagamento nunca veio.
-                        Descobriu, tarde demais, que o comprador tinha três empresas bloqueadas
-                        e histórico de inadimplência em outras praças.
+                        Um produtor rural fechou a venda de toda a safra com um comprador que apareceu
+                        do nada com uma proposta boa demais. Sem verificar, assinou o contrato.
+                        Entregou a mercadoria. Esperou o pagamento. O dinheiro nunca veio.
+                        Quando foi pesquisar, descobriu que o comprador tinha três empresas bloqueadas
+                        e um histórico de calotes em outras cidades.
                     </p>
                     <span class="pain-story-loss">Prejuízo estimado: R$ 180.000</span>
                 </div>
@@ -1188,11 +1200,11 @@
                 <div class="pain-story reveal">
                     <p class="pain-story-context">Caso · Empresarial</p>
                     <p class="pain-story-text">
-                        Uma empresária precisava de capital para crescer. Um investidor apareceu
-                        com proposta generosa e postura profissional. Sem due diligence, formalizaram
-                        a sociedade. Seis meses depois, a Receita Federal notificou a empresa com
-                        uma autuação de R$ 900 mil relacionada à empresa anterior do sócio.
-                        Como cotitular, ela respondeu solidariamente.
+                        Uma empresária precisava de dinheiro para crescer. Um investidor apareceu
+                        com proposta boa e jeito de gente séria. Fecharam sociedade sem verificar nada.
+                        Seis meses depois, a Receita Federal cobrou R$ 900 mil de multa
+                        por dívida da empresa antiga do sócio.
+                        Por ser sócia também, ela teve que responder pela dívida junto.
                     </p>
                     <span class="pain-story-loss">Prejuízo estimado: inestimável</span>
                 </div>
@@ -1200,19 +1212,19 @@
                 <div class="pain-story reveal">
                     <p class="pain-story-context">Caso · Imobiliário</p>
                     <p class="pain-story-text">
-                        Uma imobiliária alugou um imóvel comercial de alto padrão sem verificar
-                        os antecedentes financeiros do locatário. Seis meses de aluguel atrasado.
-                        Negativas de renegociação. Um processo de despejo que levou 16 meses
-                        para ser concluído. O imóvel foi devolvido com danos estruturais.
+                        Uma imobiliária alugou um imóvel sem verificar o histórico do inquilino.
+                        Seis meses de aluguel sem pagar. Nada resolvido na conversa.
+                        Processo de despejo na Justiça que levou 16 meses.
+                        No final, o imóvel foi devolvido todo danificado.
                     </p>
                     <span class="pain-story-loss">Prejuízo estimado: R$ 55.000</span>
                 </div>
 
                 <div class="pain-close reveal">
                     <p>
-                        Essas histórias têm um ponto em comum: todas poderiam ter sido evitadas
+                        Essas três histórias têm algo em comum: todas poderiam ter sido evitadas
                         com uma verificação que custa menos de R$ 300.
-                        O problema não é falta de cuidado. É falta de informação.
+                        Não é falta de cuidado. É falta de informação.
                     </p>
                 </div>
             </div>
@@ -1231,15 +1243,15 @@
             <div class="diagnostico-list">
                 <div class="diag-item reveal" onclick="toggleDiag(this)">
                     <div class="diag-box"><span class="diag-check">✓</span></div>
-                    <span class="diag-text">Contratar alguém para um cargo de alta confiança</span>
+                    <span class="diag-text">Contratar alguém para um cargo de confiança</span>
                 </div>
                 <div class="diag-item reveal" onclick="toggleDiag(this)">
                     <div class="diag-box"><span class="diag-check">✓</span></div>
-                    <span class="diag-text">Fechar um contrato de compra ou venda de safra</span>
+                    <span class="diag-text">Fechar a venda ou compra de uma safra</span>
                 </div>
                 <div class="diag-item reveal" onclick="toggleDiag(this)">
                     <div class="diag-box"><span class="diag-check">✓</span></div>
-                    <span class="diag-text">Arrendar sua propriedade rural para terceiros</span>
+                    <span class="diag-text">Deixar sua propriedade rural para outra pessoa usar</span>
                 </div>
                 <div class="diag-item reveal" onclick="toggleDiag(this)">
                     <div class="diag-box"><span class="diag-check">✓</span></div>
@@ -1247,19 +1259,19 @@
                 </div>
                 <div class="diag-item reveal" onclick="toggleDiag(this)">
                     <div class="diag-box"><span class="diag-check">✓</span></div>
-                    <span class="diag-text">Comprar ou vender um imóvel ou propriedade rural</span>
+                    <span class="diag-text">Comprar ou vender um imóvel ou terreno</span>
                 </div>
                 <div class="diag-item reveal" onclick="toggleDiag(this)">
                     <div class="diag-box"><span class="diag-check">✓</span></div>
-                    <span class="diag-text">Assinar contrato com fornecedor ou parceiro estratégico</span>
+                    <span class="diag-text">Fechar negócio com um fornecedor ou parceiro novo</span>
                 </div>
                 <div class="diag-item reveal" onclick="toggleDiag(this)">
                     <div class="diag-box"><span class="diag-check">✓</span></div>
-                    <span class="diag-text">Locar um imóvel para um novo inquilino</span>
+                    <span class="diag-text">Alugar um imóvel para uma pessoa que você não conhece bem</span>
                 </div>
                 <div class="diag-item reveal" onclick="toggleDiag(this)">
                     <div class="diag-box"><span class="diag-check">✓</span></div>
-                    <span class="diag-text">Acionar judicialmente alguém e precisar localizar patrimônio</span>
+                    <span class="diag-text">Cobrar uma dívida na Justiça e precisar encontrar os bens da pessoa</span>
                 </div>
             </div>
 
@@ -1279,44 +1291,45 @@
     <section class="sec-dark">
         <div class="container-wide">
             <div class="container" style="padding:0;">
-                <h2 class="reveal">Como funciona na prática</h2>
+                <h2 class="reveal">Como funciona</h2>
                 <p class="sub-text reveal">
-                    Sem burocracia, sem contrato longo, sem visita presencial.
-                    Tudo pelo WhatsApp, do início à entrega.
+                    Sem formulário complicado, sem visita, sem demora.
+                    Tudo pelo WhatsApp, do pedido até a entrega.
                 </p>
             </div>
 
             <div class="steps-grid">
                 <div class="step reveal">
                     <p class="step-num">01</p>
-                    <h3 class="step-title">Você nos envia o CPF ou CNPJ</h3>
+                    <h3 class="step-title">Você manda o CPF ou CNPJ</h3>
                     <p class="step-desc">
-                        Pelo WhatsApp. Sem formulário longo. Informe o nome completo e o que precisa verificar.
-                        Em dúvida sobre qual serviço escolher? Orientamos sem custo.
+                        Só isso. Manda uma mensagem pelo WhatsApp com o nome e o número
+                        da pessoa ou empresa. Não sabe qual serviço escolher? A gente te ajuda a decidir, sem custo.
                     </p>
                 </div>
                 <div class="step reveal">
                     <p class="step-num">02</p>
-                    <h3 class="step-title">Analisamos em fontes públicas</h3>
+                    <h3 class="step-title">A gente pesquisa nas fontes oficiais</h3>
                     <p class="step-desc">
-                        Nossa equipe acessa Judiciário, Receita Federal, cartórios, DETRAN, Serasa
-                        e portais de transparência. Tudo legal, tudo verificado, tudo cruzado.
+                        Consultamos a Justiça, a Receita Federal, os cartórios, o DETRAN, o Serasa
+                        e outros sistemas públicos. Tudo dentro da lei, tudo verificado, tudo cruzado.
                     </p>
                 </div>
                 <div class="step reveal">
                     <p class="step-num">03</p>
-                    <h3 class="step-title">Entregamos o relatório em PDF</h3>
+                    <h3 class="step-title">Você recebe o relatório em PDF</h3>
                     <p class="step-desc">
-                        Estruturado, indexado e com análise técnica. Nos produtos executivos,
-                        inclui síntese gerada por IA e conclusão assinada pela equipe.
+                        Um arquivo organizado, fácil de ler e pronto para guardar.
+                        Nos serviços maiores, tem um resumo feito por inteligência artificial
+                        destacando os pontos que merecem atenção.
                     </p>
                 </div>
                 <div class="step reveal">
                     <p class="step-num">04</p>
                     <h3 class="step-title">Você decide com segurança</h3>
                     <p class="step-desc">
-                        Negocie, contrate ou recuse com informação real na mão.
-                        Não em suposições, não em impressões, não em palavras de terceiros.
+                        Feche o negócio ou recuse, mas com informação real na mão.
+                        Não baseado em impressão, não em palavra de desconhecido.
                     </p>
                 </div>
             </div>
@@ -1332,8 +1345,8 @@
             <div class="container" style="padding:0;">
                 <h2 class="reveal">O que você recebe</h2>
                 <p class="sub-text reveal">
-                    Não entregamos dados brutos. Entregamos inteligência organizada,
-                    pronta para ser usada na sua decisão.
+                    Não jogamos um monte de dados na sua frente.
+                    Entregamos um relatório organizado, pronto para você usar na sua decisão.
                 </p>
             </div>
 
@@ -1350,8 +1363,8 @@
                     </div>
                     <p class="deliverable-title">Relatório em PDF</p>
                     <p class="deliverable-desc">
-                        Documento formatado, indexado e pronto para arquivar como documentação
-                        oficial da sua decisão de negócio ou processo judicial.
+                        Arquivo pronto para guardar, mostrar ao seu advogado ou usar como prova.
+                        Formatado, com capa, índice e tudo organizado.
                     </p>
                 </div>
                 <div class="deliverable reveal">
@@ -1375,10 +1388,10 @@
                             <path d="M2 12l10 5 10-5"/>
                         </svg>
                     </div>
-                    <p class="deliverable-title">Análise com IA</p>
+                    <p class="deliverable-title">Resumo com Inteligência Artificial</p>
                     <p class="deliverable-desc">
-                        A partir do Report Smart, o relatório inclui síntese automática gerada
-                        por inteligência artificial com os principais pontos de atenção destacados.
+                        No Report Smart e nos serviços maiores, uma IA lê o relatório inteiro
+                        e destaca para você os pontos que merecem mais atenção. Simples assim.
                     </p>
                 </div>
                 <div class="deliverable reveal">
@@ -1404,10 +1417,10 @@
                             <line x1="9" y1="21" x2="9" y2="9"/>
                         </svg>
                     </div>
-                    <p class="deliverable-title">Linha do tempo patrimonial</p>
+                    <p class="deliverable-title">Histórico de bens ao longo do tempo</p>
                     <p class="deliverable-desc">
-                        No Dossiê Strix e superiores, entregamos a evolução patrimonial
-                        ao longo dos anos, identificando movimentações suspeitas ou inconsistências.
+                        No Dossiê Strix e nos serviços maiores, mostramos como os bens da pessoa
+                        mudaram com o passar dos anos, destacando movimentações que parecem estranhas.
                     </p>
                 </div>
                 <div class="deliverable reveal">
@@ -1417,10 +1430,10 @@
                             <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
                         </svg>
                     </div>
-                    <p class="deliverable-title">Conclusão técnica assinada</p>
+                    <p class="deliverable-title">Conclusão assinada pela equipe</p>
                     <p class="deliverable-desc">
-                        Nos produtos Due Diligence, o relatório inclui índice, análise aprofundada
-                        e conclusão técnica formal assinada pela equipe Strix.
+                        Nos serviços de Due Diligence, o relatório termina com uma conclusão
+                        clara e objetiva, assinada pela equipe Strix. Você sabe exatamente o que achou.
                     </p>
                 </div>
             </div>
@@ -1446,47 +1459,48 @@
                     <span class="audience-label">Agronegócio</span>
                     <h3 class="audience-title">Produtor rural e cafeicultor</h3>
                     <p class="audience-pain">
-                        Você negocia safras com compradores desconhecidos, arrenda terras para terceiros
-                        e contrata safristas todo ano. Cada uma dessas relações envolve valores altos
-                        e pouco tempo para investigar.
+                        Você vende safra para compradores que aparecem do nada, deixa a terra para outras pessoas
+                        usarem e contrata safristas todo ano. São negócios grandes, feitos rápido,
+                        com gente que você quase não conhece.
                     </p>
                     <p class="audience-trigger">
-                        "Antes de fechar a venda da safra, você sabe exatamente quem é o comprador?"
+                        "Antes de fechar a venda da safra, você sabe de verdade quem é o comprador?"
                     </p>
                 </div>
                 <div class="audience-card reveal">
                     <span class="audience-label">Advocacia</span>
                     <h3 class="audience-title">Advogado(a) cível e empresarial</h3>
                     <p class="audience-pain">
-                        Seus clientes precisam executar dívidas, localizar patrimônio em processos
-                        de partilha e verificar a idoneidade de contrapartes antes de assinar acordos.
+                        Seus clientes precisam cobrar dívidas na Justiça, encontrar bens em
+                        processos de herança e saber se a outra parte é de confiança antes de fechar
+                        um acordo. Informação rápida muda o resultado do processo.
                     </p>
                     <p class="audience-trigger">
-                        "Investigação patrimonial acelera acordos e evita surpresas no processo."
+                        "Saber onde estão os bens do devedor acelera o acordo e evita surpresas."
                     </p>
                 </div>
                 <div class="audience-card reveal">
                     <span class="audience-label">Empresarial</span>
                     <h3 class="audience-title">Empresário(a) em crescimento</h3>
                     <p class="audience-pain">
-                        Você está trazendo um sócio, fechando parceria estratégica ou cogitando
-                        comprar outra empresa. Precisa saber exatamente com quem está negociando
-                        antes de assinar qualquer documento.
+                        Você está trazendo um sócio, fechando parceria ou pensando em comprar
+                        outra empresa. Precisa saber com quem está negociando de verdade
+                        antes de colocar o nome no papel.
                     </p>
                     <p class="audience-trigger">
-                        "Antes de assinar a sociedade, você investigou seu futuro sócio?"
+                        "Você já pesquisou o histórico do seu futuro sócio antes de assinar?"
                     </p>
                 </div>
                 <div class="audience-card reveal">
                     <span class="audience-label">Imobiliário</span>
                     <h3 class="audience-title">Corretor(a) e imobiliária</h3>
                     <p class="audience-pain">
-                        Seu cliente quer alugar ou vender, mas não tem como verificar a capacidade
-                        financeira e os antecedentes do interessado antes de assinar. Um inquilino
-                        errado pode custar meses de processo.
+                        Seu cliente quer alugar ou vender, mas não tem como saber se o interessado
+                        tem dívidas, processos ou histórico de problema. Um inquilino errado significa
+                        meses de aluguel perdido e um processo longo na Justiça.
                     </p>
                     <p class="audience-trigger">
-                        "Verificar antes de alugar evita processo de despejo depois."
+                        "Verificar antes de alugar é sempre mais barato do que despejar depois."
                     </p>
                 </div>
             </div>
@@ -1501,8 +1515,8 @@
         <div class="container">
             <h2 class="reveal">Quanto custa não saber?</h2>
             <p class="sub-text reveal">
-                Compare o custo de uma análise Strix com o custo real
-                de uma decisão tomada sem informação.
+                Coloca na balança: o custo de uma consulta Strix
+                contra o custo de uma decisão tomada no escuro.
             </p>
 
             <div class="anchor-grid">
@@ -1513,7 +1527,7 @@
                         <span class="anchor-item-value">R$ 80k–500k</span>
                     </div>
                     <div class="anchor-item">
-                        <span class="anchor-item-label">Sociedade com passivo fiscal oculto</span>
+                        <span class="anchor-item-label">Entrar em sociedade com quem tem dívida oculta com o governo</span>
                         <span class="anchor-item-value">Inestimável</span>
                     </div>
                     <div class="anchor-item">
@@ -1521,11 +1535,11 @@
                         <span class="anchor-item-value">12 a 24 meses</span>
                     </div>
                     <div class="anchor-item">
-                        <span class="anchor-item-label">Honorários de advogado para recuperar</span>
+                        <span class="anchor-item-label">Advogado para tentar recuperar o que perdeu</span>
                         <span class="anchor-item-value">R$ 10k–50k</span>
                     </div>
                     <div class="anchor-item">
-                        <span class="anchor-item-label">Imóvel comprado com ônus oculto</span>
+                        <span class="anchor-item-label">Comprar imóvel que tinha dívida escondida registrada em cartório</span>
                         <span class="anchor-item-value">R$ 30k–200k</span>
                     </div>
                 </div>
@@ -1689,33 +1703,34 @@
 
                 <div class="carta-body">
                     <p>
-                        Escolhemos esse trabalho por um motivo simples: informação precisa protege pessoas.
+                        Escolhemos esse trabalho por um motivo simples: quando você tem a informação certa,
+                        você toma decisões melhores. E decisões melhores protegem o que você levou anos pra construir.
                     </p>
                     <p>
-                        Vimos de perto o que acontece quando contratos são assinados sem verificação.
-                        Safras que não são pagas. Sociedades que viram processos. Arrendamentos que terminam
-                        em despejo. Bons negócios destruídos por um parceiro com passivo oculto.
-                        Pessoas sérias, trabalhadoras, sendo prejudicadas. Não por descuido,
-                        mas por falta de informação acessível.
+                        Vimos de perto o que acontece quando as pessoas fecham negócio sem verificar quem está
+                        do outro lado. Safras que não são pagas. Sociedades que viram processo na Justiça.
+                        Imóveis dados pra quem não pagou nem o primeiro mês. Pessoas honestas
+                        e trabalhadoras sendo prejudicadas. Não porque foram descuidadas,
+                        mas porque simplesmente não tinham como saber.
                     </p>
                     <p>
-                        A Strix existe para ser essa informação.
+                        A Strix existe pra mudar isso.
                     </p>
                     <p>
-                        Não somos detetives de novela. Não espiamos ninguém. Fazemos o que qualquer
-                        pessoa poderia fazer se tivesse tempo, acesso e metodologia: pesquisamos fontes
-                        públicas, cruzamos dados, organizamos o que encontramos e entregamos o que
-                        você precisa saber para decidir com segurança.
+                        A gente não é detetive de filme. Não espia ninguém, não invade nada.
+                        O que fazemos é pesquisar nos mesmos lugares em que qualquer cidadão poderia pesquisar,
+                        mas com o método certo, as ferramentas certas e a experiência de quem faz isso todo dia.
+                        Juntamos tudo e entregamos de forma clara pra você.
                     </p>
                     <p>
-                        Trabalhamos com uma regra inegociável: só entregamos o que é real,
-                        só coletamos o que é legal, e tratamos cada caso com o sigilo que
-                        ele merece. Sua identidade e seu problema são confidenciais.
+                        Nossa regra é simples: só entregamos o que é real, só buscamos o que é permitido
+                        por lei, e tratamos cada caso com o total sigilo que ele merece.
+                        Ninguém vai saber que você consultou a Strix.
                     </p>
                     <p>
                         Se você chegou até aqui, é porque tem uma decisão importante pela frente.
-                        Faz sentido tomar essa decisão com as melhores informações disponíveis.
-                        Nós estamos prontos quando você estiver.
+                        Faz todo o sentido tomar essa decisão com as melhores informações na mão.
+                        A gente está pronto quando você estiver.
                     </p>
                 </div>
 
@@ -1736,59 +1751,58 @@
             <div class="container" style="padding:0;">
                 <h2 class="reveal">Por que confiar na Strix</h2>
                 <p class="sub-text reveal">
-                    Credibilidade não é promessa. É método, é transparência e é respeito ao cliente.
+                    Confiança não é promessa. É o que você vê quando analisa como trabalhamos.
                 </p>
             </div>
 
             <div class="auth-grid">
                 <div class="auth-block reveal">
-                    <p class="auth-block-label">Regulamentação Legal</p>
+                    <p class="auth-block-label">Tudo dentro da lei</p>
                     <p class="auth-block-text">
-                        A atividade de investigação particular é regulamentada no Brasil pela
+                        A investigação particular é regulamentada no Brasil pela
                         <strong style="color:var(--white);">Lei 13.432/2017</strong>.
-                        Nossa operação está em total conformidade com a legislação vigente.
-                        Nenhuma ação ilegal, nenhum acesso não autorizado.
+                        A Strix trabalha dentro dessa lei. Nada ilegal, nenhum acesso indevido,
+                        nada que você não pudesse fazer por conta própria se tivesse tempo e método.
                     </p>
                 </div>
                 <div class="auth-block reveal">
-                    <p class="auth-block-label">Fontes Abertas</p>
+                    <p class="auth-block-label">Informações públicas e verificadas</p>
                     <p class="auth-block-text">
-                        100% das informações são coletadas em fontes públicas e legalmente
-                        acessíveis: Judiciário, Receita Federal, CNJ, cartórios, DETRAN,
-                        Serasa, portais de transparência e bases autorizadas.
+                        Toda informação que entregamos vem de fontes públicas: Justiça, Receita Federal,
+                        cartórios, DETRAN, Serasa e portais do governo. São dados que qualquer cidadão
+                        pode acessar. A diferença é que a gente sabe onde buscar e como cruzar.
                     </p>
                 </div>
                 <div class="auth-block reveal">
-                    <p class="auth-block-label">Proteção de Dados</p>
+                    <p class="auth-block-label">Seus dados protegidos</p>
                     <p class="auth-block-text">
-                        Operamos em conformidade com a
-                        <strong style="color:var(--white);">Lei Geral de Proteção de Dados (LGPD)</strong>.
-                        Os dados do solicitante e do investigado são tratados com
-                        responsabilidade e descartados após a entrega.
+                        Seguimos a <strong style="color:var(--white);">Lei de Proteção de Dados (LGPD)</strong>.
+                        As informações que você nos envia ficam guardadas em segurança
+                        e são descartadas depois que o trabalho é entregue.
                     </p>
                 </div>
                 <div class="auth-block reveal">
-                    <p class="auth-block-label">Equipe Especializada</p>
+                    <p class="auth-block-label">Equipe com experiência real</p>
                     <p class="auth-block-text">
-                        Profissionais com formação e experiência em segurança e inteligência.
-                        Não somos improviso. Cada relatório é produzido com metodologia técnica
-                        e revisado antes da entrega.
+                        Somos profissionais com formação e experiência em segurança e inteligência.
+                        Não é improviso. Cada relatório tem um método definido e passa por revisão
+                        antes de ser entregue.
                     </p>
                 </div>
                 <div class="auth-block reveal">
-                    <p class="auth-block-label">Sigilo Total</p>
+                    <p class="auth-block-label">Sigilo total garantido</p>
                     <p class="auth-block-text">
-                        Sua identidade nunca é revelada. Não divulgamos quem solicitou
-                        uma análise. Não comentamos sobre casos. O sigilo é inegociável
-                        É parte da nossa ética de trabalho.
+                        A pessoa que você quer verificar nunca vai saber que você consultou a Strix.
+                        Não revelamos quem pediu, não comentamos sobre nenhum caso.
+                        Sigilo é parte do serviço, não é opcional.
                     </p>
                 </div>
                 <div class="auth-block reveal">
-                    <p class="auth-block-label">Atendimento Nacional</p>
+                    <p class="auth-block-label">Atendimento em todo o Brasil</p>
                     <p class="auth-block-text">
-                        Os serviços de inteligência de dados atendemos qualquer CPF ou CNPJ
-                        do Brasil, remotamente, com a mesma qualidade independente da localização
-                        do solicitante ou do investigado.
+                        Você pode ser de qualquer cidade do Brasil. A pessoa que quer verificar também.
+                        Não precisa de visita, não precisa de nada presencial.
+                        Tudo pelo WhatsApp, com a mesma qualidade.
                     </p>
                 </div>
             </div>
@@ -1809,15 +1823,14 @@
             <div class="faq-list-venda">
                 <div class="faq-item-v">
                     <button class="faq-btn-v" onclick="toggleFaqV(this)">
-                        É realmente legal contratar esse tipo de serviço?
+                        É legal contratar esse tipo de serviço?
                         <span class="faq-icon-v">+</span>
                     </button>
                     <div class="faq-body-v">
                         <div class="faq-body-inner-v">
-                            Sim. A investigação particular é regulamentada pela Lei 13.432/2017.
-                            A Strix opera exclusivamente com fontes abertas e públicas, sem interceptação
-                            de comunicações, sem acesso a sistemas privados e sem qualquer atividade
-                            que contrarie a legislação brasileira.
+                            Sim. A investigação particular é regulamentada no Brasil pela Lei 13.432/2017.
+                            A Strix trabalha apenas com informações públicas. Não escutamos conversa de ninguém,
+                            não invadimos nenhum sistema e não fazemos nada fora da lei.
                         </div>
                     </div>
                 </div>
@@ -1828,11 +1841,10 @@
                     </button>
                     <div class="faq-body-v">
                         <div class="faq-body-inner-v">
-                            Pelo mesmo caminho que qualquer cidadão poderia percorrer,
-                            mas com método, acesso e experiência. Consultamos o Judiciário Nacional,
-                            Receita Federal, CNJ, cartórios de imóveis, DETRAN, Serasa, Portal da
-                            Transparência e diversas bases públicas. O diferencial é a metodologia
-                            de cruzamento e análise das informações.
+                            Da mesma forma que qualquer pessoa poderia pesquisar, mas com método e experiência.
+                            Consultamos a Justiça, a Receita Federal, os cartórios, o DETRAN, o Serasa
+                            e portais do governo. O diferencial é saber exatamente onde procurar
+                            e como juntar tudo de forma clara.
                         </div>
                     </div>
                 </div>
@@ -1857,11 +1869,11 @@
                     </button>
                     <div class="faq-body-v">
                         <div class="faq-body-inner-v">
-                            Não. A escolha depende da sua necessidade. Para verificar um candidato
-                            a emprego, a Consulta Avulsa resolve. Para investigar um comprador de safra,
-                            o Report Smart basta. Para partilha ou execução judicial, o Strix Full
-                            ou Dossiê Strix. Para fusões e aquisições, a Due Diligence. Se tiver
-                            dúvida, fale conosco, orientamos sem custo.
+                            Não. Cada situação tem o serviço certo. Para checar um candidato a emprego,
+                            a Consulta Avulsa basta. Para verificar um comprador de safra, o Report Smart.
+                            Para processo judicial ou divisão de bens, o Strix Full ou Dossiê Strix.
+                            Para entrar em sociedade ou comprar uma empresa, a Due Diligence.
+                            Na dúvida, é só perguntar, a gente orienta sem custo nenhum.
                         </div>
                     </div>
                 </div>
@@ -1872,10 +1884,9 @@
                     </button>
                     <div class="faq-body-v">
                         <div class="faq-body-inner-v">
-                            Não poderia ser mais simples. Envie uma mensagem pelo WhatsApp com o
-                            CPF ou CNPJ e o serviço desejado. Confirmamos o pagamento via Pix
-                            e iniciamos imediatamente. O relatório chega diretamente no seu WhatsApp
-                            ou e-mail dentro do prazo combinado.
+                            É simples. Manda uma mensagem pelo WhatsApp com o CPF ou CNPJ
+                            e o serviço que quer. Confirmamos o pagamento via Pix e começamos na hora.
+                            O relatório chega no seu WhatsApp ou e-mail dentro do prazo combinado.
                         </div>
                     </div>
                 </div>
@@ -1886,11 +1897,9 @@
                     </button>
                     <div class="faq-body-v">
                         <div class="faq-body-inner-v">
-                            Sim. Todas as informações são coletadas diretamente nas fontes
-                            originais: órgãos oficiais, sistemas judiciais e bases de dados
-                            verificadas. Não trabalhamos com especulação nem com informações
-                            não confirmadas. O que entregamos é o que os sistemas públicos
-                            registram.
+                            Sim. Tudo vem direto das fontes: sistemas da Justiça, da Receita Federal,
+                            dos cartórios e de outros órgãos oficiais. Não inventamos nada,
+                            não supomos nada. O que entregamos é o que os sistemas públicos registram.
                         </div>
                     </div>
                 </div>
@@ -1901,9 +1910,9 @@
                     </button>
                     <div class="faq-body-v">
                         <div class="faq-body-inner-v">
-                            Entre em contato. Avaliamos cada caso com atenção e podemos
-                            adaptar o escopo conforme a necessidade específica. Atendimentos
-                            personalizados para situações fora do padrão são bem-vindos.
+                            Fale com a gente. A gente avalia o que você precisa e
+                            pode montar um serviço sob medida para a sua situação.
+                            Casos diferentes são bem-vindos.
                         </div>
                     </div>
                 </div>
