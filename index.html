@@ -528,21 +528,34 @@
             color: var(--gray);
         }
 
+        .sc-pitch {
+            font-size: 13px;
+            color: rgba(255,255,255,0.58);
+            line-height: 1.65;
+            margin-bottom: 16px;
+        }
+
         .sc-cta {
-            margin-top: 24px;
-            font-size: 12px;
+            display: block;
+            margin-top: 22px;
+            padding: 13px 20px;
+            font-size: 11px;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
             color: var(--white);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: gap var(--t);
+            text-align: center;
+            border: 1.5px solid rgba(255,255,255,0.32);
+            border-radius: 2px;
+            transition: background var(--t), color var(--t), border-color var(--t);
             cursor: pointer;
         }
 
-        .service-card:hover .sc-cta { gap: 14px; }
+        .sc-cta:hover {
+            background: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+        }
 
         /* Operational */
         .op-grid {
@@ -1184,7 +1197,7 @@
                 <div class="hero-badges">
                     <span class="hero-badge">100% fontes abertas e legais</span>
                     <span class="hero-badge">Sigilo total garantido</span>
-                    <span class="hero-badge">Sul de Minas e todo o Brasil</span>
+                    <span class="hero-badge">Atendimento em todo o Brasil</span>
                 </div>
             </div>
         </div>
@@ -1214,7 +1227,7 @@
                     <h3>Quem somos</h3>
                     <p>
                         Empresa de investigação particular, inteligência de dados e due diligence
-                        com atuação no Sul de Minas Gerais e atendimento em todo o Brasil. Nossa equipe é formada por
+                        com atendimento em todo o Brasil. Nossa equipe é formada por
                         profissionais com experiência em segurança e inteligência, com forte conexão
                         ao agronegócio cafeeiro regional.
                     </p>
@@ -1278,16 +1291,21 @@
                         <p class="sc-price">R$ 100 <span>/ pessoa ou empresa</span></p>
                         <p class="sc-prazo">Prazo: até 2 horas úteis</p>
                         <div class="sc-divider"></div>
-                        <p style="font-size:12px;color:var(--gray);margin-bottom:10px;">Antecedentes básicos. Verificação rápida antes de contratar ou fechar negócio.</p>
+                        <p class="sc-pitch">
+                            A verificação mais rápida do mercado. Em até 2 horas você sabe se a
+                            pessoa ou empresa com quem está negociando tem dívidas, processos na
+                            Justiça ou nome sujo. Um investimento de R$&nbsp;100 que pode evitar
+                            um prejuízo de milhares.
+                        </p>
                         <ul class="sc-features">
-                            <li>Situação CPF/CNPJ na Receita Federal</li>
-                            <li>Processos judiciais em todos os tribunais</li>
-                            <li>Negativações, protestos e score de crédito</li>
-                            <li>Presença digital e reputação online</li>
-                            <li>Relatório em PDF formatado</li>
+                            <li>Situação do CPF ou CNPJ na Receita Federal</li>
+                            <li>Processos judiciais em todos os tribunais do Brasil</li>
+                            <li>Dívidas, protestos em cartório e histórico de crédito</li>
+                            <li>O que aparece sobre essa pessoa ou empresa na internet</li>
+                            <li>Relatório em PDF pronto para guardar ou apresentar</li>
                         </ul>
                         <a href="https://wa.me/5535997120007?text=Olá!%20Tenho%20interesse%20na%20Consulta%20Avulsa."
-                           target="_blank" rel="noopener" class="sc-cta">Solicitar →</a>
+                           target="_blank" rel="noopener" class="sc-cta">Solicitar este serviço</a>
                     </div>
 
                     <!-- 02 -->
@@ -1298,14 +1316,20 @@
                         <p class="sc-prazo">Prazo: até 24 horas úteis</p>
                         <div class="sc-divider"></div>
                         <div class="sc-includes">+ Tudo da Consulta Avulsa</div>
+                        <p class="sc-pitch">
+                            Vai além dos antecedentes: você descobre endereços, telefones,
+                            e-mails atualizados, os carros que a pessoa tem e um mapa completo
+                            de quem ela conhece e com quem faz negócios. Ideal para verificar
+                            sócios, compradores de safra e parceiros.
+                        </p>
                         <ul class="sc-features">
-                            <li>Dados cadastrais completos (endereços, telefones, e-mails)</li>
-                            <li>Grafo de relacionamentos (sócios, familiares, empresas)</li>
-                            <li>Veículos via DETRAN + Tabela FIPE</li>
-                            <li>Análise automática com inteligência artificial</li>
+                            <li>Endereços, telefones e e-mails atualizados</li>
+                            <li>Mapa de conexões: sócios, parentes e empresas relacionadas</li>
+                            <li>Carros registrados no nome da pessoa (com valor de mercado)</li>
+                            <li>Resumo automático do perfil feito com inteligência artificial</li>
                         </ul>
                         <a href="https://wa.me/5535997120007?text=Olá!%20Tenho%20interesse%20no%20Report%20Smart."
-                           target="_blank" rel="noopener" class="sc-cta">Solicitar →</a>
+                           target="_blank" rel="noopener" class="sc-cta">Solicitar este serviço</a>
                     </div>
 
                     <!-- 03 -->
@@ -1316,16 +1340,22 @@
                         <p class="sc-prazo">Prazo: até 24 horas úteis</p>
                         <div class="sc-divider"></div>
                         <div class="sc-includes">+ Tudo do Report Smart</div>
+                        <p class="sc-pitch">
+                            Para negócios de valor, saber que a pessoa não tem dívida não é
+                            suficiente. Você precisa saber se os bens dela estão livres ou
+                            presos pela Justiça. Este relatório consulta todos os cartórios de
+                            imóveis do Brasil em uma única busca.
+                        </p>
                         <ul class="sc-features">
-                            <li>Busca nacional em cartórios de imóveis (todos os RIs)</li>
-                            <li>Procurações públicas lavradas em cartório</li>
-                            <li>Hipotecas, ônus reais e penhoras</li>
-                            <li>Doações e inventários</li>
-                            <li>Indisponibilidade de bens (CNIB/CNJ)</li>
-                            <li>Análise patrimonial com IA</li>
+                            <li>Imóveis registrados em todos os cartórios de imóveis do Brasil</li>
+                            <li>Procurações em cartório (quem pode agir no nome da pessoa)</li>
+                            <li>Hipotecas, penhoras e restrições sobre os bens</li>
+                            <li>Heranças e doações registradas em cartório</li>
+                            <li>Bens bloqueados ou indisponíveis por ordem judicial</li>
+                            <li>Análise patrimonial completa feita com inteligência artificial</li>
                         </ul>
                         <a href="https://wa.me/5535997120007?text=Olá!%20Tenho%20interesse%20no%20Strix%20Full."
-                           target="_blank" rel="noopener" class="sc-cta">Solicitar →</a>
+                           target="_blank" rel="noopener" class="sc-cta">Solicitar este serviço</a>
                     </div>
 
                     <!-- 04 -->
@@ -1336,14 +1366,20 @@
                         <p class="sc-prazo">Prazo: 48 a 72 horas úteis</p>
                         <div class="sc-divider"></div>
                         <div class="sc-includes">+ Tudo do Strix Full</div>
+                        <p class="sc-pitch">
+                            Uma investigação que vai fundo. Analisamos a pessoa, todas as
+                            empresas que ela tem ou já teve, quem são os sócios dela, e
+                            mostramos como o patrimônio cresceu ou mudou ao longo dos anos.
+                            Para quem não pode se dar ao luxo de errar na escolha.
+                        </p>
                         <ul class="sc-features">
-                            <li>Análise de todas as empresas vinculadas</li>
-                            <li>Investigação de sócios em 1º grau</li>
-                            <li>Linha do tempo patrimonial</li>
-                            <li>Relatório executivo premium com índice e conclusão técnica</li>
+                            <li>Análise de todas as empresas que a pessoa tem ou já teve</li>
+                            <li>Investigação dos sócios diretos (quem faz negócios com ela)</li>
+                            <li>Linha do tempo: como o patrimônio mudou ao longo dos anos</li>
+                            <li>Relatório profissional com sumário e conclusão técnica assinada</li>
                         </ul>
                         <a href="https://wa.me/5535997120007?text=Olá!%20Tenho%20interesse%20no%20Dossiê%20Strix."
-                           target="_blank" rel="noopener" class="sc-cta">Solicitar →</a>
+                           target="_blank" rel="noopener" class="sc-cta">Solicitar este serviço</a>
                     </div>
 
                     <!-- 05 -->
@@ -1354,15 +1390,21 @@
                         <p class="sc-prazo">Prazo: 3 a 5 dias úteis</p>
                         <div class="sc-divider"></div>
                         <div class="sc-includes">+ Tudo do Dossiê Strix</div>
+                        <p class="sc-pitch">
+                            Antes de comprar uma empresa, abrir uma sociedade ou assinar
+                            um contrato grande, você precisa saber se a empresa é idônea,
+                            se está em dia com todas as obrigações legais e se a marca que
+                            ela usa é realmente dela.
+                        </p>
                         <ul class="sc-features">
-                            <li>Análise societária completa</li>
-                            <li>Certidões negativas (Federal, Estadual, Municipal, Trabalhista, FGTS)</li>
-                            <li>Verificação de marcas no INPI</li>
-                            <li>Análise reputacional completa</li>
-                            <li>Relatório executivo assinado</li>
+                            <li>Análise completa de quem são os donos reais da empresa</li>
+                            <li>Certidões negativas: Receita Federal, Estado, Prefeitura, Trabalhista e FGTS</li>
+                            <li>Verificação da marca no INPI (o nome da empresa está protegido?)</li>
+                            <li>Análise da reputação da empresa no mercado e na mídia</li>
+                            <li>Relatório executivo assinado por nossos especialistas</li>
                         </ul>
                         <a href="https://wa.me/5535997120007?text=Olá!%20Tenho%20interesse%20na%20Due%20Diligence%20Básica."
-                           target="_blank" rel="noopener" class="sc-cta">Solicitar →</a>
+                           target="_blank" rel="noopener" class="sc-cta">Solicitar este serviço</a>
                     </div>
 
                     <!-- 06 -->
@@ -1373,16 +1415,22 @@
                         <p class="sc-prazo">Prazo: 5 a 7 dias úteis</p>
                         <div class="sc-divider"></div>
                         <div class="sc-includes">+ Tudo da Due Diligence Básica</div>
+                        <p class="sc-pitch">
+                            O relatório mais completo para grandes negócios. Investigamos a
+                            empresa inteira e cada pessoa que está por trás dela. No final,
+                            um especialista apresenta os resultados para você em reunião
+                            online, tirando todas as dúvidas ao vivo.
+                        </p>
                         <ul class="sc-features">
-                            <li>Dossiê individual de todos os sócios</li>
-                            <li>Empresas vinculadas e participações cruzadas</li>
-                            <li>Contratos e licitações públicas (Portal da Transparência)</li>
-                            <li>Linha do tempo completa da estrutura societária</li>
-                            <li>Apresentação remota dos resultados (Google Meet)</li>
-                            <li>Relatório executivo premium</li>
+                            <li>Dossiê individual de cada sócio da empresa</li>
+                            <li>Todas as empresas ligadas e participações entre elas</li>
+                            <li>Contratos com o governo e licitações (Portal da Transparência)</li>
+                            <li>Histórico completo de como a empresa mudou ao longo do tempo</li>
+                            <li>Reunião online com especialista para apresentar os resultados</li>
+                            <li>Relatório executivo premium com apresentação visual</li>
                         </ul>
                         <a href="https://wa.me/5535997120007?text=Olá!%20Tenho%20interesse%20na%20Due%20Diligence%20Completa."
-                           target="_blank" rel="noopener" class="sc-cta">Solicitar →</a>
+                           target="_blank" rel="noopener" class="sc-cta">Solicitar este serviço</a>
                     </div>
 
                 </div>
@@ -1845,7 +1893,7 @@
                             </div>
                             <div>
                                 <span class="channel-label">Atendimento</span>
-                                <span class="channel-value">Sul de Minas e todo o Brasil</span>
+                                <span class="channel-value">Todo o Brasil</span>
                             </div>
                         </div>
                     </div>
@@ -1962,7 +2010,7 @@
             <div class="footer-bottom">
                 <p class="footer-legal">
                     Strix Inteligência | Enxergamos o que outros não veem<br>
-                    Sul de Minas Gerais &nbsp;·&nbsp; Atendimento em todo o Brasil
+                    Atendimento em todo o Brasil
                 </p>
                 <p class="footer-legal">
                     Serviços realizados em conformidade com a Lei 13.432/2017<br>
