@@ -441,7 +441,9 @@
         /* ============================================================
            SERVIÇOS
         ============================================================ */
-        #servicos { background: var(--black); }
+        #servicos, #servicos-op { padding: 80px 0; }
+        #servicos { background: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.85)), url('assets/imagem/artificial-intelligence-digital-human.jpg') center/cover no-repeat fixed; }
+        #servicos-op { background: linear-gradient(rgba(26,26,26,0.80), rgba(26,26,26,0.80)), url('assets/imagem/seguranca.jpg') center/cover no-repeat fixed; }
 
         .services-block { margin-bottom: 72px; }
         .services-block:last-child { margin-bottom: 0; }
@@ -1366,7 +1368,6 @@
 
             <!-- Grupo 1: Inteligência de Dados -->
             <div class="services-block">
-                <img src="assets/imagem/artificial-intelligence-digital-human.jpg" alt="" class="sec-photo" style="margin-bottom:40px; filter:brightness(0.35);">
                 <p class="services-block-label">Grupo 1</p>
                 <h2 class="services-block-title">Inteligência de Dados</h2>
                 <p class="services-block-sub">
@@ -1531,8 +1532,11 @@
                 </div>
             </div>
 
-            <div class="services-sep"></div>
+        </div>
+    </section>
 
+    <section id="servicos-op">
+        <div class="container">
             <!-- Grupo 2: Acompanhamento Operacional -->
             <div class="services-block">
                 <p class="services-block-label">Grupo 2</p>
@@ -1698,7 +1702,7 @@
                 </div>
 
                 <div class="persona-card reveal">
-                    <img src="assets/imagem/imobiliario2.jpg" alt="Imobiliário" class="persona-card-img" style="object-position: center 20%;">
+                    <img src="assets/imagem/imobiliario2.jpg" alt="Imobiliário" class="persona-card-img" style="object-position: center top;">
                     <div class="persona-card-body">
                     <span class="persona-badge">Imobiliário</span>
                     <h3 class="persona-title">Corretor(a) e Imobiliária</h3>
