@@ -250,7 +250,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: var(--black);
+            background: linear-gradient(to bottom, rgba(26,26,26,0.68) 0%, rgba(26,26,26,0.95) 100%), url('assets/imagem/tecnologia.jpg') center/cover no-repeat;
             position: relative;
             overflow: hidden;
             padding-top: 68px;
@@ -679,9 +679,26 @@
 
         .persona-card {
             background: var(--white);
-            padding: 34px 30px;
+            padding: 0;
             border-left: 3px solid var(--black);
             transition: border-color var(--t);
+            overflow: hidden;
+        }
+
+        .persona-card-img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            filter: brightness(0.85);
+            transition: filter var(--t);
+        }
+
+        .persona-card:hover .persona-card-img { filter: brightness(1); }
+
+        .persona-card-body {
+            padding: 28px 30px 34px;
         }
 
         .persona-card:hover { border-left-color: var(--graphite); }
@@ -1580,6 +1597,8 @@
             <div class="personas-grid">
 
                 <div class="persona-card reveal">
+                    <img src="assets/imagem/produtor-rural.jpg" alt="Produtor Rural" class="persona-card-img">
+                    <div class="persona-card-body">
                     <span class="persona-badge">Produtor Rural</span>
                     <h3 class="persona-title">Cafeicultor e Produtor Rural</h3>
                     <p class="persona-stat">R$ 180 mil</p>
@@ -1598,9 +1617,12 @@
                         <span class="persona-tag">Strix Full</span>
                         <span class="persona-tag">Due Diligence Básica</span>
                     </div>
+                    </div><!-- /persona-card-body -->
                 </div>
 
                 <div class="persona-card reveal">
+                    <img src="assets/imagem/advogado.jpg" alt="Advogado" class="persona-card-img">
+                    <div class="persona-card-body">
                     <span class="persona-badge">Advocacia</span>
                     <h3 class="persona-title">Advogado(a) Cível e Empresarial</h3>
                     <p class="persona-stat">75 milhões</p>
@@ -1619,9 +1641,12 @@
                         <span class="persona-tag">Due Diligence Básica</span>
                         <span class="persona-tag">Due Diligence Completa</span>
                     </div>
+                    </div><!-- /persona-card-body -->
                 </div>
 
                 <div class="persona-card reveal">
+                    <img src="assets/imagem/empresario.jpg" alt="Empresário" class="persona-card-img">
+                    <div class="persona-card-body">
                     <span class="persona-badge">Empresarial</span>
                     <h3 class="persona-title">Empresário(a) em Crescimento</h3>
                     <p class="persona-stat">6 milhões</p>
@@ -1639,9 +1664,12 @@
                         <span class="persona-tag">Due Diligence Básica</span>
                         <span class="persona-tag">Due Diligence Completa</span>
                     </div>
+                    </div><!-- /persona-card-body -->
                 </div>
 
                 <div class="persona-card reveal">
+                    <img src="assets/imagem/imobiliario.jpg" alt="Imobiliário" class="persona-card-img">
+                    <div class="persona-card-body">
                     <span class="persona-badge">Imobiliário</span>
                     <h3 class="persona-title">Corretor(a) e Imobiliária</h3>
                     <p class="persona-stat">12 a 18 meses</p>
@@ -1659,6 +1687,7 @@
                         <span class="persona-tag">Report Smart</span>
                         <span class="persona-tag">Strix Full</span>
                     </div>
+                    </div><!-- /persona-card-body -->
                 </div>
 
             </div>

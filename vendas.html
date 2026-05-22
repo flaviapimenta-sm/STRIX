@@ -114,6 +114,16 @@
         .sec-dark  { background: var(--black);    padding: 88px 0; }
         .sec-mid   { background: #222222;          padding: 88px 0; }
         .sec-light { background: var(--off-white); padding: 88px 0; color: var(--black); }
+
+        .sec-photo {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            filter: brightness(0.45);
+            margin-bottom: 0;
+        }
         .sec-graphite { background: var(--graphite); padding: 88px 0; }
 
         .sec-light .tag     { color: var(--gray); }
@@ -222,7 +232,7 @@
             min-height: 92vh;
             display: flex;
             align-items: center;
-            background: var(--black);
+            background: linear-gradient(to bottom, rgba(26,26,26,0.70) 0%, rgba(26,26,26,0.93) 100%), url('assets/imagem/hero.jpg') center/cover no-repeat;
             padding: 100px 0 80px;
             position: relative;
             overflow: hidden;
@@ -1225,8 +1235,9 @@
     <!-- ══════════════════════════════════════════════
          SEÇÃO 3 — APERTAR NA PEDRA
     ══════════════════════════════════════════════ -->
-    <section class="sec-dark">
-        <div class="container">
+    <section class="sec-dark" style="padding-top:0;">
+        <img src="assets/imagem/aperto-de-mao.jpg" alt="" class="sec-photo">
+        <div class="container" style="padding-top:88px;">
             <h2 class="reveal">Todo prejuízo começa com uma<br>decisão tomada sem informação</h2>
             <p class="sub-text reveal">Infelizmente, não são casos raros. Pelo contrário, estão cada vez mais comuns.</p>
 
@@ -1334,8 +1345,9 @@
     <!-- ══════════════════════════════════════════════
          SEÇÃO 5 — MODO DE PREPARO
     ══════════════════════════════════════════════ -->
-    <section class="sec-dark">
-        <div class="container-wide">
+    <section class="sec-dark" style="padding-top:0;">
+        <img src="assets/imagem/pesquisa.jpg" alt="" class="sec-photo">
+        <div class="container-wide" style="padding-top:88px;">
             <div class="container" style="padding:0;">
                 <h2 class="reveal">Como funciona</h2>
                 <p class="sub-text reveal">
@@ -1792,8 +1804,9 @@
     <!-- ══════════════════════════════════════════════
          SEÇÃO 11 — AUTORIDADE
     ══════════════════════════════════════════════ -->
-    <section class="sec-mid">
-        <div class="container-wide">
+    <section class="sec-mid" style="padding-top:0;">
+        <img src="assets/imagem/seguranca.jpg" alt="" class="sec-photo">
+        <div class="container-wide" style="padding-top:88px;">
             <div class="container" style="padding:0;">
                 <h2 class="reveal">Por que confiar na Strix</h2>
                 <p class="sub-text reveal">
