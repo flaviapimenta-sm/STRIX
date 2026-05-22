@@ -567,9 +567,26 @@
 
         .audience-card {
             background: var(--white);
-            padding: 32px 28px;
+            padding: 0;
             border-left: 3px solid var(--black);
             color: var(--black);
+            overflow: hidden;
+        }
+
+        .audience-card-img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            filter: brightness(0.85);
+            transition: filter 0.3s ease;
+        }
+
+        .audience-card:hover .audience-card-img { filter: brightness(1); }
+
+        .audience-card-body {
+            padding: 28px 28px 32px;
         }
 
         .audience-label {
@@ -1512,52 +1529,64 @@
 
             <div class="audience-grid">
                 <div class="audience-card reveal">
-                    <span class="audience-label">Agronegócio</span>
-                    <h3 class="audience-title">Produtor rural e cafeicultor</h3>
-                    <p class="audience-pain">
-                        Você vende safra para compradores que aparecem do nada, deixa a terra para outras pessoas
-                        usarem e contrata safristas todo ano. São negócios grandes, feitos rápido,
-                        com gente que você quase não conhece.
-                    </p>
-                    <p class="audience-trigger">
-                        "Antes de fechar a venda da safra, você sabe de verdade quem é o comprador?"
-                    </p>
+                    <img src="assets/imagem/fazenda2.jpg" alt="Produtor Rural" class="audience-card-img" style="object-position: center 60%;">
+                    <div class="audience-card-body">
+                        <span class="audience-label">Agronegócio</span>
+                        <h3 class="audience-title">Produtor rural e cafeicultor</h3>
+                        <p class="audience-pain">
+                            Você vende safra para compradores que aparecem do nada, deixa a terra para outras pessoas
+                            usarem e contrata safristas todo ano. São negócios grandes, feitos rápido,
+                            com gente que você quase não conhece.
+                        </p>
+                        <p class="audience-trigger">
+                            "Antes de fechar a venda da safra, você sabe de verdade quem é o comprador?"
+                        </p>
+                    </div>
                 </div>
                 <div class="audience-card reveal">
-                    <span class="audience-label">Advocacia</span>
-                    <h3 class="audience-title">Advogado(a) cível e empresarial</h3>
-                    <p class="audience-pain">
-                        Seus clientes precisam cobrar dívidas na Justiça, encontrar bens em
-                        processos de herança e saber se a outra parte é de confiança antes de fechar
-                        um acordo. Informação rápida muda o resultado do processo.
-                    </p>
-                    <p class="audience-trigger">
-                        "Saber onde estão os bens do devedor acelera o acordo e evita surpresas."
-                    </p>
+                    <img src="assets/imagem/man-suit.jpg" alt="Advogado" class="audience-card-img">
+                    <div class="audience-card-body">
+                        <span class="audience-label">Advocacia</span>
+                        <h3 class="audience-title">Advogado(a) cível e empresarial</h3>
+                        <p class="audience-pain">
+                            Seus clientes precisam cobrar dívidas na Justiça, encontrar bens em
+                            processos de herança e saber se a outra parte é de confiança antes de fechar
+                            um acordo. Informação rápida muda o resultado do processo.
+                        </p>
+                        <p class="audience-trigger">
+                            "Saber onde estão os bens do devedor acelera o acordo e evita surpresas."
+                        </p>
+                    </div>
                 </div>
                 <div class="audience-card reveal">
-                    <span class="audience-label">Empresarial</span>
-                    <h3 class="audience-title">Empresário(a) em crescimento</h3>
-                    <p class="audience-pain">
-                        Você está trazendo um sócio, fechando parceria ou pensando em comprar
-                        outra empresa. Precisa saber com quem está negociando de verdade
-                        antes de colocar o nome no papel.
-                    </p>
-                    <p class="audience-trigger">
-                        "Você já pesquisou o histórico do seu futuro sócio antes de assinar?"
-                    </p>
+                    <img src="assets/imagem/empresario2.jpg" alt="Empresário" class="audience-card-img" style="object-position: center 25%;">
+                    <div class="audience-card-body">
+                        <span class="audience-label">Empresarial</span>
+                        <h3 class="audience-title">Empresário(a) em crescimento</h3>
+                        <p class="audience-pain">
+                            Você está trazendo um sócio, fechando parceria ou pensando em comprar
+                            outra empresa. Precisa saber com quem está negociando de verdade
+                            antes de colocar o nome no papel.
+                        </p>
+                        <p class="audience-trigger">
+                            "Você já pesquisou o histórico do seu futuro sócio antes de assinar?"
+                        </p>
+                    </div>
                 </div>
                 <div class="audience-card reveal">
-                    <span class="audience-label">Imobiliário</span>
-                    <h3 class="audience-title">Corretor(a) e imobiliária</h3>
-                    <p class="audience-pain">
-                        Seu cliente quer alugar ou vender, mas não tem como saber se o interessado
-                        tem dívidas, processos ou histórico de problema. Um inquilino errado significa
-                        meses de aluguel perdido e um processo longo na Justiça.
-                    </p>
-                    <p class="audience-trigger">
-                        "Verificar antes de alugar é sempre mais barato do que despejar depois."
-                    </p>
+                    <img src="assets/imagem/imobiliario2.jpg" alt="Imobiliário" class="audience-card-img" style="object-position: center top;">
+                    <div class="audience-card-body">
+                        <span class="audience-label">Imobiliário</span>
+                        <h3 class="audience-title">Corretor(a) e imobiliária</h3>
+                        <p class="audience-pain">
+                            Seu cliente quer alugar ou vender, mas não tem como saber se o interessado
+                            tem dívidas, processos ou histórico de problema. Um inquilino errado significa
+                            meses de aluguel perdido e um processo longo na Justiça.
+                        </p>
+                        <p class="audience-trigger">
+                            "Verificar antes de alugar é sempre mais barato do que despejar depois."
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
