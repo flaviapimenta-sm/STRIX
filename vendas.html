@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Descubra com quem você está negociando antes de assinar qualquer contrato. Relatórios de inteligência em até 24h. 100% legal. Sigilo absoluto.">
-    <title>Antes de Confiar, Verifique | Strix Inteligência</title>
+    <meta name="description" content="Verificação empresarial para contratação, fornecedores e sócios. Relatórios claros, fontes públicas, finalidade declarada e apoio à decisão em conformidade com a LGPD.">
+    <title>Verificação Empresarial | Strix Inteligência</title>
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -817,6 +817,145 @@
 
         .price-cta:hover { background: #1da851; transform: translateY(-1px); }
 
+        /* ── RELATÓRIO MODELO ── */
+        .report-showcase {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+            gap: 32px;
+            align-items: stretch;
+            margin-top: 42px;
+        }
+
+        .report-panel {
+            background: var(--off-white);
+            color: var(--black);
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 360px;
+        }
+
+        .report-panel-title {
+            font-size: 28px;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .report-panel-text {
+            color: var(--graphite);
+            font-size: 15px;
+            margin-bottom: 24px;
+        }
+
+        .report-bullets {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .report-bullets li {
+            color: var(--graphite);
+            font-size: 13px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .report-bullets li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #43A047;
+            position: absolute;
+            left: 0;
+            top: 9px;
+        }
+
+        .report-preview {
+            background: #FFFFFF;
+            border-radius: 8px;
+            color: var(--black);
+            padding: 26px;
+            box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+            min-height: 360px;
+        }
+
+        .report-preview-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            border-bottom: 1px solid #1A1A1A;
+            padding-bottom: 14px;
+            margin-bottom: 22px;
+        }
+
+        .report-preview-brand {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #1A1A1A;
+        }
+
+        .report-preview-code {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: #888;
+            white-space: nowrap;
+        }
+
+        .report-preview-card {
+            background: #F5F5F5;
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 18px;
+        }
+
+        .report-preview-label {
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .report-preview-name {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .report-status-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .report-status {
+            border: 1px solid #E0E0E0;
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 11px;
+            color: #3A3A3A;
+        }
+
+        .report-status span {
+            display: inline-block;
+            margin-top: 8px;
+            border-radius: 20px;
+            padding: 2px 8px;
+            font-size: 10px;
+            border: 1px solid #A5D6A7;
+            color: #2E7D32;
+            background: #E8F5E9;
+        }
+
+        .report-status span.warn {
+            border-color: #FFE082;
+            color: #E65100;
+            background: #FFF8E1;
+        }
+
         /* ── SEÇÃO 10: CARTA ABERTA ── */
         .carta {
             max-width: 680px;
@@ -1073,6 +1212,7 @@
             .audience-grid      { grid-template-columns: 1fr; }
             .anchor-grid        { grid-template-columns: 1fr; }
             .price-grid         { grid-template-columns: 1fr; }
+            .report-showcase    { grid-template-columns: 1fr; }
             .auth-grid          { grid-template-columns: 1fr; }
             .final-cta-box      { padding: 36px 24px; }
         }
@@ -1145,29 +1285,30 @@
 
         <div class="container">
             <div class="promessa-content">
-                <p class="promessa-pre">Investigação Particular · Inteligência de Dados</p>
+                <p class="promessa-pre">Verificação Empresarial · Relatórios de Apoio à Decisão</p>
                 <h1 class="promessa-title">
-                    Você sabe<br>
-                    <em>com quem está</em><br>
-                    negociando?
+                    Contrate,<br>
+                    compre e negocie<br>
+                    <em>com mais segurança</em>
                 </h1>
                 <p class="promessa-sub">
-                    Antes de vender uma safra futura, trazer um sócio ou alugar sua propriedade: verifique primeiro.
-                    Em até 24 horas entregamos um relatório completo sobre qualquer pessoa ou empresa do Brasil.
+                    A Strix organiza dados públicos em relatórios claros para contratação, fornecedores,
+                    sócios e decisões empresariais sensíveis. Sem decisão automática, com finalidade declarada
+                    e análise proporcional.
                 </p>
                 <div class="cta-center" style="align-items:flex-start;">
-                    <a href="https://wa.me/5535997120007?text=Olá!%20Quero%20fazer%20uma%20consulta%20Strix."
+                    <a href="https://wa.me/5535997120007?text=Olá!%20Quero%20uma%20verificação%20empresarial%20Strix."
                        target="_blank" rel="noopener" class="cta-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                        Quero verificar antes de assinar
+                        Quero uma verificação empresarial
                     </a>
-                    <span class="cta-note">Sem cadastro · Sem burocracia · Pelo WhatsApp</span>
+                    <span class="cta-note">Para RH, compras, jurídico, sócios e operações sensíveis</span>
                 </div>
                 <div class="promessa-trust">
-                    <span class="trust-item"><span class="trust-dot"></span>100% legal · Lei 13.432/2017</span>
-                    <span class="trust-item"><span class="trust-dot"></span>Fontes abertas e verificadas</span>
-                    <span class="trust-item"><span class="trust-dot"></span>Sigilo absoluto garantido</span>
-                    <span class="trust-item"><span class="trust-dot"></span>Entrega em até 24h úteis</span>
+                    <span class="trust-item"><span class="trust-dot"></span>Fontes públicas e oficiais</span>
+                    <span class="trust-item"><span class="trust-dot"></span>Uso com finalidade declarada</span>
+                    <span class="trust-item"><span class="trust-dot"></span>Relatório executivo em PDF</span>
+                    <span class="trust-item"><span class="trust-dot"></span>Conformidade LGPD</span>
                 </div>
             </div>
         </div>
@@ -1449,8 +1590,8 @@
                     </div>
                     <p class="deliverable-title">Entrega dentro do prazo</p>
                     <p class="deliverable-desc">
-                        De 2 horas úteis (Consulta Avulsa) a 7 dias úteis (Due Diligence Completa).
-                        O prazo começa a contar após a confirmação do pagamento.
+                        De verificação avulsa a pacote corporativo recorrente.
+                        O prazo começa a contar após a confirmação do escopo.
                     </p>
                 </div>
                 <div class="deliverable reveal">
@@ -1461,10 +1602,10 @@
                             <path d="M2 12l10 5 10-5"/>
                         </svg>
                     </div>
-                    <p class="deliverable-title">Resumo com Inteligência Artificial</p>
+                    <p class="deliverable-title">Resumo executivo claro</p>
                     <p class="deliverable-desc">
-                        No Report Smart e nos serviços maiores, uma IA lê o relatório inteiro
-                        e destaca para você os pontos que merecem mais atenção. Simples assim.
+                        A análise organiza os pontos relevantes em linguagem clara,
+                        sem decisão automática e sem juridiquês desnecessário.
                     </p>
                 </div>
                 <div class="deliverable reveal">
@@ -1476,10 +1617,10 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                         </svg>
                     </div>
-                    <p class="deliverable-title">Mapa de conexões</p>
+                    <p class="deliverable-title">Vínculos relevantes</p>
                     <p class="deliverable-desc">
-                        A partir do Report Smart, mapeamos sócios, parentes, empresas ligadas
-                        e todas as conexões que podem influenciar sua decisão de negócio.
+                        Quando aplicável, identificamos vínculos empresariais e registros públicos
+                        relevantes para a finalidade declarada pela empresa.
                     </p>
                 </div>
                 <div class="deliverable reveal">
@@ -1490,10 +1631,10 @@
                             <line x1="9" y1="21" x2="9" y2="9"/>
                         </svg>
                     </div>
-                    <p class="deliverable-title">Histórico de bens ao longo do tempo</p>
+                    <p class="deliverable-title">Análise sob medida</p>
                     <p class="deliverable-desc">
-                        No Dossiê Strix e nos serviços maiores, mostramos como os bens da pessoa
-                        mudaram com o passar dos anos, destacando movimentações que parecem estranhas.
+                        Em casos corporativos mais sensíveis, o escopo pode incluir análise patrimonial,
+                        societária ou reputacional conforme a necessidade.
                     </p>
                 </div>
                 <div class="deliverable reveal">
@@ -1503,10 +1644,10 @@
                             <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
                         </svg>
                     </div>
-                    <p class="deliverable-title">Conclusão assinada pela equipe</p>
+                    <p class="deliverable-title">Limites de uso documentados</p>
                     <p class="deliverable-desc">
-                        Nos serviços de Due Diligence, o relatório termina com uma conclusão
-                        clara e objetiva, assinada pela equipe Strix. Você sabe exatamente o que achou.
+                        O relatório deixa claro que as informações são apoio à decisão,
+                        exigindo avaliação proporcional pela área responsável.
                     </p>
                 </div>
             </div>
@@ -1517,6 +1658,58 @@
     <!-- ══════════════════════════════════════════════
          SEÇÃO 7 — PARA QUEM É
     ══════════════════════════════════════════════ -->
+    <section class="sec-dark">
+        <div class="container-wide">
+            <div class="container" style="padding:0;">
+                <span class="tag">Modelo empresarial</span>
+                <h2 class="reveal">Veja o tipo de relatório que a empresa recebe</h2>
+                <p class="sub-text reveal">
+                    O resultado não é uma planilha solta nem um amontoado de prints.
+                    É um relatório executivo, legível e preparado para apoiar uma decisão responsável.
+                </p>
+            </div>
+
+            <div class="report-showcase reveal">
+                <div class="report-panel">
+                    <div>
+                        <h3 class="report-panel-title">Relatório de Verificação Empresarial</h3>
+                        <p class="report-panel-text">
+                            Criado para RH, compras, jurídico e diretoria avaliarem sinais objetivos
+                            antes de contratar, liberar acesso, fechar parceria ou seguir com uma negociação.
+                        </p>
+                        <ul class="report-bullets">
+                            <li>Validação cadastral e status por categoria</li>
+                            <li>Resumo executivo com pontos de atenção</li>
+                            <li>Detalhamento de registros cíveis, trabalhistas e criminais</li>
+                            <li>Aviso legal, limites de uso e reforço de não discriminação</li>
+                        </ul>
+                    </div>
+                    <a href="relatorio-modelo.html"
+                       target="_blank" rel="noopener" class="cta-btn-outline">
+                        Ver relatório modelo
+                    </a>
+                </div>
+
+                <div class="report-preview" aria-label="Prévia visual do relatório Strix">
+                    <div class="report-preview-top">
+                        <span class="report-preview-brand">Strix</span>
+                        <span class="report-preview-code">STX-2026-06-A7F2</span>
+                    </div>
+                    <div class="report-preview-card">
+                        <div class="report-preview-label">Pessoa consultada</div>
+                        <div class="report-preview-name">João Carlos Mendes Alves</div>
+                    </div>
+                    <div class="report-status-grid">
+                        <div class="report-status">Antecedentes PF<br><span>Nada consta</span></div>
+                        <div class="report-status">Mandados BNMP<br><span>Não localizado</span></div>
+                        <div class="report-status">Execuções e cobranças<br><span class="warn">1 registro</span></div>
+                        <div class="report-status">Processos trabalhistas<br><span class="warn">1 registro</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="sec-light">
         <div class="container-wide">
             <div class="container" style="padding:0;">
@@ -1649,122 +1842,66 @@
     <section class="sec-mid">
         <div class="container-wide">
             <div class="container" style="padding:0;">
-                <h2 class="reveal">Escolha o nível certo<br>para a sua decisão</h2>
+                <h2 class="reveal">Planos para empresas<br>que precisam decidir melhor</h2>
                 <p class="sub-text reveal">
-                    Cada produto inclui tudo do anterior. Você paga pelo que realmente precisa,
-                    sem pagar pelo que não vai usar.
+                    Comece com uma verificação avulsa, compre créditos para o time ou fale com a Strix
+                    para montar um fluxo corporativo com recorrência.
                 </p>
             </div>
 
             <div class="price-grid">
                 <div class="price-card reveal">
                     <p class="price-card-num">01</p>
-                    <p class="price-card-name">Consulta Avulsa</p>
-                    <p class="price-val">R$ 100 <span>/ CPF ou CNPJ</span></p>
-                    <p class="price-prazo">Entrega em até 2h úteis</p>
+                    <p class="price-card-name">Verificação Empresarial Avulsa</p>
+                    <p class="price-val">R$ 100 <span>/ pessoa</span></p>
+                    <p class="price-prazo">Para testar o modelo ou avaliar um caso pontual</p>
                     <div class="price-divider"></div>
                     <ul class="price-features">
-                        <li>Situação CPF/CNPJ na Receita Federal</li>
-                        <li>Processos judiciais em todos os tribunais</li>
-                        <li>Negativações, protestos e score</li>
-                        <li>Presença digital e reputação</li>
-                        <li>Relatório em PDF</li>
+                        <li>Validação cadastral</li>
+                        <li>Consulta em bases públicas e judiciais</li>
+                        <li>Status por categoria</li>
+                        <li>Relatório empresarial em PDF</li>
+                        <li>Aviso legal e limites de uso</li>
                     </ul>
-                    <a href="https://wa.me/5535997120007?text=Quero%20a%20Consulta%20Avulsa%20por%20R$%20100."
+                    <a href="https://wa.me/5535997120007?text=Quero%20uma%20Verifica%C3%A7%C3%A3o%20Empresarial%20Avulsa."
                        target="_blank" rel="noopener" class="price-cta">Solicitar</a>
                 </div>
 
-                <div class="price-card reveal">
+                <div class="price-card highlight reveal">
+                    <span class="price-card-badge">Empresas</span>
                     <p class="price-card-num">02</p>
-                    <p class="price-card-name">Report Smart</p>
-                    <p class="price-val">R$ 280 <span>/ CPF ou CNPJ</span></p>
-                    <p class="price-prazo">Entrega em até 24h úteis</p>
+                    <p class="price-card-name">Pacote Corporativo</p>
+                    <p class="price-val">R$ 850 <span>/ 10 créditos</span></p>
+                    <p class="price-prazo">Para RH, compras e jurídico usarem sob demanda</p>
                     <div class="price-divider"></div>
-                    <div class="price-includes">+ Tudo da Consulta Avulsa</div>
                     <ul class="price-features">
-                        <li>Dados cadastrais completos</li>
-                        <li>Mapa de conexões (sócios, parentes e empresas)</li>
-                        <li>Veículos via DETRAN + FIPE</li>
-                        <li>Análise automática com IA</li>
+                        <li>10 verificações empresariais</li>
+                        <li>Identificação da empresa solicitante</li>
+                        <li>Finalidade declarada por consulta</li>
+                        <li>Relatório padronizado para auditoria interna</li>
+                        <li>Orientação de enquadramento do caso</li>
                     </ul>
-                    <a href="https://wa.me/5535997120007?text=Quero%20o%20Report%20Smart%20por%20R$%20280."
+                    <a href="https://wa.me/5535997120007?text=Quero%20o%20Pacote%20Corporativo%20Strix%20com%2010%20cr%C3%A9ditos."
                        target="_blank" rel="noopener" class="price-cta">Solicitar</a>
                 </div>
 
                 <div class="price-card reveal">
                     <p class="price-card-num">03</p>
-                    <p class="price-card-name">Strix Full</p>
-                    <p class="price-val">R$ 400 <span>/ CPF ou CNPJ</span></p>
-                    <p class="price-prazo">Entrega em até 24h úteis</p>
+                    <p class="price-card-name">Plano Empresarial</p>
+                    <p class="price-val">Sob consulta</p>
+                    <p class="price-prazo">Para volume recorrente, integração ou painel corporativo</p>
                     <div class="price-divider"></div>
-                    <div class="price-includes">+ Tudo do Report Smart</div>
                     <ul class="price-features">
-                        <li>Busca em cartórios de imóveis</li>
-                        <li>Procurações e hipotecas</li>
-                        <li>Penhoras e ônus reais</li>
-                        <li>Indisponibilidade CNIB/CNJ</li>
-                        <li>Análise patrimonial com IA</li>
+                        <li>Fluxo mensal de verificações</li>
+                        <li>Modelo de relatório personalizado</li>
+                        <li>Controle por solicitante e finalidade</li>
+                        <li>Suporte para área jurídica/compliance</li>
+                        <li>Preparado para futura integração com painel</li>
                     </ul>
-                    <a href="https://wa.me/5535997120007?text=Quero%20o%20Strix%20Full%20por%20R$%20400."
-                       target="_blank" rel="noopener" class="price-cta">Solicitar</a>
-                </div>
-
-                <div class="price-card reveal">
-                    <p class="price-card-num">04</p>
-                    <p class="price-card-name">Dossiê Strix</p>
-                    <p class="price-val">R$ 750 <span>/ CPF ou CNPJ</span></p>
-                    <p class="price-prazo">Entrega em 48 a 72h úteis</p>
-                    <div class="price-divider"></div>
-                    <div class="price-includes">+ Tudo do Strix Full</div>
-                    <ul class="price-features">
-                        <li>Todas as empresas vinculadas</li>
-                        <li>Sócios em 1º grau</li>
-                        <li>Linha do tempo patrimonial</li>
-                        <li>Relatório executivo premium</li>
-                    </ul>
-                    <a href="https://wa.me/5535997120007?text=Quero%20o%20Dossiê%20Strix%20por%20R$%20750."
-                       target="_blank" rel="noopener" class="price-cta">Solicitar</a>
-                </div>
-
-                <div class="price-card reveal">
-                    <p class="price-card-num">05</p>
-                    <p class="price-card-name">Due Diligence Básica</p>
-                    <p class="price-val">R$ 990 <span>/ empresa</span></p>
-                    <p class="price-prazo">Entrega em 3 a 5 dias úteis</p>
-                    <div class="price-divider"></div>
-                    <div class="price-includes">+ Tudo do Dossiê Strix</div>
-                    <ul class="price-features">
-                        <li>Análise societária completa</li>
-                        <li>Certidões negativas (Fed, Est, Mun, Trab, FGTS)</li>
-                        <li>Verificação de marcas no INPI</li>
-                        <li>Análise reputacional</li>
-                        <li>Relatório executivo assinado</li>
-                    </ul>
-                    <a href="https://wa.me/5535997120007?text=Quero%20a%20Due%20Diligence%20Básica%20por%20R$%20990."
-                       target="_blank" rel="noopener" class="price-cta">Solicitar</a>
-                </div>
-
-                <div class="price-card highlight reveal">
-                    <span class="price-card-badge">Mais completo</span>
-                    <p class="price-card-num">06</p>
-                    <p class="price-card-name">Due Diligence Completa</p>
-                    <p class="price-val">R$ 1.500 <span>/ empresa</span></p>
-                    <p class="price-prazo">Entrega em 5 a 7 dias úteis</p>
-                    <div class="price-divider"></div>
-                    <div class="price-includes">+ Tudo da DD Básica</div>
-                    <ul class="price-features">
-                        <li>Dossiê individual de todos os sócios</li>
-                        <li>Participações cruzadas e vinculadas</li>
-                        <li>Contratos e licitações públicas</li>
-                        <li>Linha do tempo societária completa</li>
-                        <li>Apresentação remota (Google Meet)</li>
-                        <li>Relatório executivo premium</li>
-                    </ul>
-                    <a href="https://wa.me/5535997120007?text=Quero%20a%20Due%20Diligence%20Completa%20por%20R$%201.500."
+                    <a href="https://wa.me/5535997120007?text=Quero%20falar%20sobre%20um%20Plano%20Empresarial%20Strix."
                        target="_blank" rel="noopener" class="price-cta">Solicitar</a>
                 </div>
             </div>
-
             <div class="cta-center reveal" style="margin-top:12px;">
                 <p style="font-size:13px;color:var(--gray);margin-bottom:20px;">
                     Não sabe qual escolher? Fale com a equipe, orientamos gratuitamente.
@@ -1803,26 +1940,25 @@
                         A Strix existe pra mudar isso.
                     </p>
                     <p>
-                        A gente não é detetive de filme. Não espia ninguém, não invade nada.
-                        O que fazemos é pesquisar nos mesmos lugares em que qualquer cidadão poderia pesquisar,
-                        mas com o método certo, as ferramentas certas e a experiência de quem faz isso todo dia.
-                        Juntamos tudo e entregamos de forma clara pra você.
+                        A Strix não monitora pessoas, não acessa sistemas restritos e não toma decisão no lugar da empresa.
+                        O que fazemos é organizar dados públicos e registros oficiais com método,
+                        contexto e clareza. Juntamos tudo em um relatório objetivo para apoiar
+                        uma decisão responsável.
                     </p>
                     <p>
-                        Nossa regra é simples: só entregamos o que é real, só buscamos o que é permitido
-                        por lei, e tratamos cada caso com o total sigilo que ele merece.
-                        Ninguém vai saber que você consultou a Strix.
+                        Nossa regra é simples: só entregamos o que é verificável, só buscamos
+                        o que é permitido e tratamos cada solicitação com o sigilo que ela exige.
                     </p>
                     <p>
                         Se você chegou até aqui, é porque tem uma decisão importante pela frente.
                         Faz todo o sentido tomar essa decisão com as melhores informações na mão.
-                        A gente está pronto quando você estiver.
+                        A equipe Strix está pronta quando sua empresa precisar.
                     </p>
                 </div>
 
                 <div class="carta-assinatura">
                     <p class="carta-assinatura-nome">STRIX INTELIGÊNCIA</p>
-                    <p class="carta-assinatura-cargo">Equipe de Investigação e Análise</p>
+                    <p class="carta-assinatura-cargo">Equipe de Inteligência e Análise</p>
                 </div>
             </div>
         </div>
@@ -1844,20 +1980,18 @@
 
             <div class="auth-grid">
                 <div class="auth-block reveal">
-                    <p class="auth-block-label">Tudo dentro da lei</p>
+                    <p class="auth-block-label">Uso responsável das informações</p>
                     <p class="auth-block-text">
-                        A investigação particular é regulamentada no Brasil pela
-                        <strong style="color:var(--white);">Lei 13.432/2017</strong>.
-                        A Strix trabalha dentro dessa lei. Nada ilegal, nenhum acesso indevido,
-                        nada que você não pudesse fazer por conta própria se tivesse tempo e método.
+                        A Strix trabalha com fontes públicas, finalidade declarada e tratamento proporcional.
+                        Nada ilegal, nenhum acesso indevido, nenhum uso para decisão automática.
                     </p>
                 </div>
                 <div class="auth-block reveal">
                     <p class="auth-block-label">Informações públicas e verificadas</p>
                     <p class="auth-block-text">
                         Toda informação que entregamos vem de fontes públicas: Justiça, Receita Federal,
-                        cartórios, DETRAN, Serasa e portais do governo. São dados que qualquer cidadão
-                        pode acessar. A diferença é que a gente sabe onde buscar e como cruzar.
+                        cartórios, DETRAN, Serasa e portais do governo. São dados de acesso legítimo.
+                        A diferença está no método, na organização e no contexto da análise.
                     </p>
                 </div>
                 <div class="auth-block reveal">
@@ -1879,9 +2013,8 @@
                 <div class="auth-block reveal">
                     <p class="auth-block-label">Sigilo total garantido</p>
                     <p class="auth-block-text">
-                        A pessoa que você quer verificar nunca vai saber que você consultou a Strix.
-                        Não revelamos quem pediu, não comentamos sobre nenhum caso.
-                        Sigilo é parte do serviço, não é opcional.
+                        Os dados da empresa solicitante e da pessoa consultada são tratados com sigilo.
+                        O relatório existe para apoio interno, dentro da finalidade informada.
                     </p>
                 </div>
                 <div class="auth-block reveal">
@@ -1915,9 +2048,9 @@
                     </button>
                     <div class="faq-body-v">
                         <div class="faq-body-inner-v">
-                            Sim. A investigação particular é regulamentada no Brasil pela Lei 13.432/2017.
-                            A Strix trabalha apenas com informações públicas. Não escutamos conversa de ninguém,
-                            não invadimos nenhum sistema e não fazemos nada fora da lei.
+                            Sim. A Strix trabalha com fontes públicas e finalidade declarada.
+                            Não acessamos sistemas restritos, não obtemos informação privada indevidamente
+                            e não fazemos decisão automática de contratação.
                         </div>
                     </div>
                 </div>
@@ -1937,15 +2070,14 @@
                 </div>
                 <div class="faq-item-v">
                     <button class="faq-btn-v" onclick="toggleFaqV(this)">
-                        Minha identidade fica protegida? A pessoa investigada vai saber?
+                        Minha empresa e a pessoa consultada ficam protegidas?
                         <span class="faq-icon-v">+</span>
                     </button>
                     <div class="faq-body-v">
                         <div class="faq-body-inner-v">
-                            Sua identidade é completamente confidencial. A pessoa investigada
-                            não tem como saber que solicitou uma análise. Não deixamos rastros,
-                            não contactamos o investigado e não divulgamos nenhuma informação
-                            sobre o solicitante.
+                            Os dados são tratados com sigilo e finalidade definida. A Strix recomenda
+                            que a empresa use o relatório apenas como apoio proporcional à decisão,
+                            respeitando LGPD, regras trabalhistas e políticas internas.
                         </div>
                     </div>
                 </div>
@@ -1956,11 +2088,9 @@
                     </button>
                     <div class="faq-body-v">
                         <div class="faq-body-inner-v">
-                            Não. Cada situação tem o serviço certo. Para checar um candidato a emprego,
-                            a Consulta Avulsa basta. Para verificar um comprador de safra, o Report Smart.
-                            Para processo judicial ou divisão de bens, o Strix Full ou Dossiê Strix.
-                            Para entrar em sociedade ou comprar uma empresa, a Due Diligence.
-                            Na dúvida, é só perguntar, a gente orienta sem custo nenhum.
+                            Não. Para um caso pontual, a verificação avulsa resolve.
+                            Para volume de RH, compras ou jurídico, o pacote corporativo costuma fazer mais sentido.
+                            Para recorrência ou integração, montamos um plano empresarial.
                         </div>
                     </div>
                 </div>
@@ -1971,9 +2101,9 @@
                     </button>
                     <div class="faq-body-v">
                         <div class="faq-body-inner-v">
-                            É simples. Manda uma mensagem pelo WhatsApp com o CPF ou CNPJ
-                            e o serviço que quer. Confirmamos o pagamento (Pix ou cartão parcelado) e começamos na hora.
-                            O relatório chega no seu WhatsApp ou e-mail dentro do prazo combinado.
+                            É simples. A empresa informa a finalidade, o tipo de verificação
+                            e os dados mínimos necessários. Confirmamos o escopo, registramos
+                            a solicitação e entregamos o relatório no canal combinado.
                         </div>
                     </div>
                 </div>
@@ -1997,9 +2127,9 @@
                     </button>
                     <div class="faq-body-v">
                         <div class="faq-body-inner-v">
-                            Fale com a gente. A gente avalia o que você precisa e
-                            pode montar um serviço sob medida para a sua situação.
-                            Casos diferentes são bem-vindos.
+                            Fale com a Strix. Avaliamos a necessidade da empresa
+                            e podemos montar um fluxo sob medida para o seu cenário.
+                            Casos diferentes são analisados com escopo definido.
                         </div>
                     </div>
                 </div>
@@ -2009,16 +2139,13 @@
             <div class="final-cta-box reveal">
                 <p class="final-cta-price-label">Preços e prazos</p>
                 <p class="final-cta-price">
-                    Consulta Avulsa · R$ 100 · 2h &nbsp;|&nbsp;
-                    Report Smart · R$ 280 · 24h &nbsp;|&nbsp;
-                    Strix Full · R$ 400 · 24h<br>
-                    Dossiê Strix · R$ 750 · 72h &nbsp;|&nbsp;
-                    Due Diligence Básica · R$ 990 · 5 dias &nbsp;|&nbsp;
-                    Due Diligence Completa · R$ 1.500 · 7 dias
+                    Verificação Avulsa · R$ 100 &nbsp;|&nbsp;
+                    Pacote Corporativo · R$ 850 / 10 créditos<br>
+                    Plano Empresarial · Sob consulta
                 </p>
-                <a href="https://wa.me/5535997120007?text=Olá!%20Quero%20solicitar%20uma%20análise%20Strix."
+                <a href="https://wa.me/5535997120007?text=Olá!%20Quero%20uma%20verificação%20empresarial%20Strix."
                    target="_blank" rel="noopener" class="cta-btn" style="margin: 0 auto;">
-                    Quero proteger minha decisão agora
+                    Quero falar com a Strix
                 </a>
                 <div class="payment-methods">
                     <span class="pay-badge">
@@ -2041,7 +2168,7 @@
                     </span>
                 </div>
                 <p class="cta-note" style="margin-top:10px;">
-                    Entrega garantida no prazo ou reembolso integral
+                    Relatórios com finalidade declarada, fontes públicas e apoio à decisão responsável
                 </p>
             </div>
         </div>
@@ -2068,7 +2195,7 @@
                 </div>
                 <p class="footer-venda-legal">
                     Strix Inteligência | Enxergamos o que outros não veem<br>
-                    Serviços realizados em conformidade com a Lei 13.432/2017 e a LGPD.<br>
+                    Serviços realizados com fontes públicas, finalidade declarada e atenção à LGPD.<br>
                     <a href="index.html" style="color:var(--gray);text-decoration:underline;">Ver site completo</a>
                 </p>
             </div>
@@ -2132,3 +2259,5 @@
 
 </body>
 </html>
+
+
