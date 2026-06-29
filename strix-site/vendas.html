@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Verificação empresarial para contratação, fornecedores e sócios. Relatórios claros, fontes públicas, finalidade declarada e apoio à decisão em conformidade com a LGPD.">
+    <title>Verificação Empresarial | Strix Inteligência</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background: #1A1A1A;
+            color: #FFFFFF;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --black:      #1A1A1A;
+            --graphite:   #3D3D3D;
+            --gray:       #888888;
+            --light-gray: #C8C8C8;
+            --off-white:  #F5F5F5;
+            --white:      #FFFFFF;
+            --wa:         #25D366;
+            --t:          0.3s ease;
+        }
+
+        a  { color: inherit; text-decoration: none; }
+        ul { list-style: none; }
+        p  { line-height: 1.7; }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-wide {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── TAGS ── */
+        .tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        /* ── BUTTONS ── */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--wa);
+            color: var(--white);
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 18px 36px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all var(--t);
+            border: none;
+            text-decoration: none;
+            width: 100%;
+            max-width: 440px;
+        }
+
+        .cta-btn:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
+
+        .cta-btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--white);
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 14px 28px;
+            border: 1.5px solid var(--white);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all var(--t);
+            text-decoration: none;
+        }
+
+        .cta-btn-outline:hover { background: var(--white); color: var(--black); }
+
+        .cta-center { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+
+        .cta-note {
+            font-size: 12px;
+            color: var(--gray);
+            letter-spacing: 1px;
+        }
+
+        /* ── SECTION STYLES ── */
+        .sec-dark  { background: var(--black);    padding: 88px 0; }
+        .sec-mid   { background: #222222;          padding: 88px 0; }
+        .sec-light { background: var(--off-white); padding: 88px 0; color: var(--black); }
+
+        .sec-photo {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            filter: brightness(0.45);
+            margin-bottom: 0;
+        }
+        .sec-graphite { background: var(--graphite); padding: 88px 0; }
+
+        .sec-light .tag     { color: var(--gray); }
+        .sec-light .sub-text { color: var(--graphite); }
+
+        .sec-num {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        h2 {
+            font-size: clamp(26px, 3.8vw, 44px);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+
+        .sub-text {
+            font-size: 17px;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        /* ── HEADER ── */
+        #header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(26,26,26,0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--graphite);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-logo-icon { width: 52px; height: auto; color: var(--white); }
+        .header-logo-icon svg { width: 100%; height: auto; display: block; }
+
+        .header-logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+            gap: 4px;
+        }
+
+        .header-logo-name {
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            color: var(--white);
+        }
+
+        .header-logo-sub {
+            font-size: 7px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: var(--gray);
+            text-transform: uppercase;
+        }
+
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--wa);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: background var(--t);
+        }
+
+        .header-cta:hover { background: #1da851; }
+
+        /* ── SEÇÃO 1: PROMESSA PRINCIPAL ── */
+        #promessa {
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(26,26,26,0.70) 0%, rgba(26,26,26,0.93) 100%), url('assets/imagem/hero.jpg') center/cover no-repeat;
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promessa-bg {
+            position: absolute;
+            right: -4%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 46%;
+            max-width: 520px;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        .promessa-content { position: relative; z-index: 2; }
+
+        .promessa-pre {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+
+        .promessa-title {
+            font-size: clamp(32px, 5vw, 62px);
+            font-weight: 700;
+            line-height: 1.08;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .promessa-title em {
+            font-style: normal;
+            color: var(--light-gray);
+        }
+
+        .promessa-sub {
+            font-size: clamp(16px, 2vw, 19px);
+            color: var(--gray);
+            margin-bottom: 40px;
+            max-width: 520px;
+            line-height: 1.65;
+        }
+
+        .promessa-trust {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 28px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 12px;
+            color: var(--gray);
+            letter-spacing: 0.5px;
+        }
+
+        .trust-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--gray);
+            flex-shrink: 0;
+        }
+
+        /* ── SEÇÃO 2: NÚMEROS REAIS ── */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .stat-block {
+            background: var(--graphite);
+            padding: 36px 32px;
+        }
+
+        .stat-sector {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .stat-number {
+            font-size: clamp(30px, 4.5vw, 50px);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .stat-desc {
+            font-size: 14px;
+            color: rgba(255,255,255,0.62);
+            line-height: 1.75;
+        }
+
+        .trust-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+        }
+
+        .trust-block {
+            background: var(--graphite);
+            padding: 24px 20px;
+            text-align: center;
+        }
+
+        .trust-block-value {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .trust-block-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gray);
+        }
+
+        /* ── SEÇÃO 3: APERTAR NA PEDRA ── */
+        .pain-stories { display: flex; flex-direction: column; gap: 2px; margin: 40px 0; }
+
+        .pain-story {
+            background: #222;
+            border-left: 3px solid var(--graphite);
+            padding: 28px 28px 28px 32px;
+            transition: border-color var(--t);
+        }
+
+        .pain-story:hover { border-left-color: var(--light-gray); }
+
+        .pain-story-context {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .pain-story-text {
+            font-size: 15px;
+            color: var(--light-gray);
+            line-height: 1.75;
+        }
+
+        .pain-story-loss {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--gray);
+            background: var(--graphite);
+            padding: 4px 12px;
+        }
+
+        .pain-close {
+            background: var(--graphite);
+            padding: 28px 32px;
+            border-left: 3px solid var(--white);
+            margin-top: 2px;
+        }
+
+        .pain-close p {
+            font-size: 16px;
+            color: var(--white);
+            font-style: italic;
+            line-height: 1.65;
+        }
+
+        /* ── SEÇÃO 4: DIAGNÓSTICO ── */
+        .diagnostico-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            margin: 36px 0;
+        }
+
+        .diag-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: var(--graphite);
+            padding: 18px 22px;
+            cursor: pointer;
+            transition: background var(--t);
+            user-select: none;
+        }
+
+        .diag-item:hover { background: #484848; }
+        .diag-item.checked { background: #484848; border-left: 3px solid var(--white); }
+
+        .diag-box {
+            width: 20px;
+            height: 20px;
+            border: 1.5px solid var(--gray);
+            flex-shrink: 0;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--t);
+        }
+
+        .diag-item.checked .diag-box {
+            background: var(--white);
+            border-color: var(--white);
+        }
+
+        .diag-check { display: none; font-size: 13px; color: var(--black); font-weight: 700; }
+        .diag-item.checked .diag-check { display: block; }
+
+        .diag-text {
+            font-size: 15px;
+            color: var(--light-gray);
+            line-height: 1.5;
+        }
+
+        .diag-close {
+            background: var(--white);
+            padding: 28px 32px;
+            margin-top: 2px;
+        }
+
+        .diag-close p {
+            font-size: 16px;
+            color: var(--black);
+            font-weight: 700;
+            line-height: 1.6;
+        }
+
+        /* ── SEÇÃO 5: MODO DE PREPARO ── */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            margin-top: 48px;
+        }
+
+        .step {
+            background: var(--graphite);
+            padding: 32px 24px;
+            position: relative;
+        }
+
+        .step-num {
+            font-size: 52px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.07);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .step-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .step-desc {
+            font-size: 13px;
+            color: var(--gray);
+            line-height: 1.65;
+        }
+
+        /* ── SEÇÃO 6: ENTREGÁVEIS ── */
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            margin-top: 48px;
+        }
+
+        .deliverable {
+            background: #222;
+            padding: 30px 26px;
+            border-top: 2px solid var(--graphite);
+            transition: border-color var(--t);
+        }
+
+        .deliverable:hover { border-top-color: var(--white); }
+
+        .deliverable-icon {
+            width: 36px;
+            height: 36px;
+            margin-bottom: 16px;
+            color: var(--light-gray);
+        }
+
+        .deliverable-title {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .deliverable-desc {
+            font-size: 13px;
+            color: var(--gray);
+            line-height: 1.65;
+        }
+
+        /* ── SEÇÃO 7: PARA QUEM É ── */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            margin-top: 48px;
+        }
+
+        .audience-card {
+            background: var(--white);
+            padding: 0;
+            border-left: 3px solid var(--black);
+            color: var(--black);
+            overflow: hidden;
+        }
+
+        .audience-card-img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            filter: brightness(0.85);
+            transition: filter 0.3s ease;
+        }
+
+        .audience-card:hover .audience-card-img { filter: brightness(1); }
+
+        .audience-card-body {
+            padding: 28px 28px 32px;
+        }
+
+        .audience-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--graphite);
+            background: var(--off-white);
+            padding: 4px 10px;
+            display: inline-block;
+            margin-bottom: 14px;
+        }
+
+        .audience-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+
+        .audience-pain {
+            font-size: 14px;
+            color: var(--graphite);
+            line-height: 1.65;
+            margin-bottom: 14px;
+        }
+
+        .audience-trigger {
+            font-size: 14px;
+            font-style: italic;
+            color: var(--black);
+            border-left: 2px solid var(--light-gray);
+            padding-left: 12px;
+            line-height: 1.5;
+        }
+
+        /* ── SEÇÃO 8: ANCORAGEM ── */
+        .anchor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            margin: 48px 0;
+        }
+
+        .anchor-bad {
+            background: #222;
+            padding: 36px 32px;
+        }
+
+        .anchor-bad-title {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .anchor-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--graphite);
+            gap: 16px;
+        }
+
+        .anchor-item:last-child { border-bottom: none; }
+
+        .anchor-item-label { font-size: 14px; color: var(--light-gray); }
+
+        .anchor-item-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--white);
+            white-space: nowrap;
+        }
+
+        .anchor-good {
+            background: var(--graphite);
+            padding: 36px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .anchor-good-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 16px;
+        }
+
+        .anchor-good-price {
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .anchor-good-sub {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 28px;
+        }
+
+        /* ── SEÇÃO 9: PREÇO ── */
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            margin: 48px 0 32px;
+        }
+
+        .price-card {
+            background: var(--graphite);
+            padding: 30px 24px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            transition: background var(--t);
+        }
+
+        .price-card:hover { background: #484848; }
+
+        .price-card.highlight {
+            background: #484848;
+            outline: 1px solid #777;
+        }
+
+        .price-card-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--white);
+            color: var(--black);
+            padding: 3px 8px;
+        }
+
+        .price-card-num {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .price-card-name {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .price-val {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 3px;
+        }
+
+        .price-val span { font-size: 13px; font-weight: 400; color: var(--gray); }
+
+        .price-prazo {
+            font-size: 11px;
+            color: var(--gray);
+            margin-bottom: 16px;
+        }
+
+        .price-divider { height: 1px; background: rgba(0,0,0,0.3); margin: 14px 0; }
+
+        .price-includes {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--gray);
+            background: rgba(0,0,0,0.2);
+            padding: 4px 8px;
+            border-left: 2px solid var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .price-features {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .price-features li {
+            font-size: 12px;
+            color: var(--light-gray);
+            padding-left: 14px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .price-features li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: var(--gray);
+        }
+
+        .price-cta {
+            display: block;
+            margin-top: 20px;
+            background: var(--wa);
+            color: var(--white);
+            text-align: center;
+            padding: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            transition: background var(--t), transform var(--t);
+        }
+
+        .price-cta:hover { background: #1da851; transform: translateY(-1px); }
+
+        /* ── RELATÓRIO MODELO ── */
+        .report-showcase {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+            gap: 32px;
+            align-items: stretch;
+            margin-top: 42px;
+        }
+
+        .report-panel {
+            background: var(--off-white);
+            color: var(--black);
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 360px;
+        }
+
+        .report-panel-title {
+            font-size: 28px;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .report-panel-text {
+            color: var(--graphite);
+            font-size: 15px;
+            margin-bottom: 24px;
+        }
+
+        .report-bullets {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .report-bullets li {
+            color: var(--graphite);
+            font-size: 13px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .report-bullets li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #43A047;
+            position: absolute;
+            left: 0;
+            top: 9px;
+        }
+
+        .report-preview {
+            background: #FFFFFF;
+            border-radius: 8px;
+            color: var(--black);
+            padding: 26px;
+            box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+            min-height: 360px;
+        }
+
+        .report-preview-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            border-bottom: 1px solid #1A1A1A;
+            padding-bottom: 14px;
+            margin-bottom: 22px;
+        }
+
+        .report-preview-brand {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #1A1A1A;
+        }
+
+        .report-preview-code {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: #888;
+            white-space: nowrap;
+        }
+
+        .report-preview-card {
+            background: #F5F5F5;
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 18px;
+        }
+
+        .report-preview-label {
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .report-preview-name {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .report-status-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .report-status {
+            border: 1px solid #E0E0E0;
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 11px;
+            color: #3A3A3A;
+        }
+
+        .report-status span {
+            display: inline-block;
+            margin-top: 8px;
+            border-radius: 20px;
+            padding: 2px 8px;
+            font-size: 10px;
+            border: 1px solid #A5D6A7;
+            color: #2E7D32;
+            background: #E8F5E9;
+        }
+
+        .report-status span.warn {
+            border-color: #FFE082;
+            color: #E65100;
+            background: #FFF8E1;
+        }
+
+        /* ── SEÇÃO 10: CARTA ABERTA ── */
+        .carta {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .carta-titulo {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 32px;
+        }
+
+        .carta-body {
+            font-size: 16px;
+            color: var(--light-gray);
+            line-height: 1.85;
+        }
+
+        .carta-body p { margin-bottom: 22px; }
+
+        .carta-body p:last-child { margin-bottom: 0; }
+
+        .carta-assinatura {
+            margin-top: 40px;
+            padding-top: 28px;
+            border-top: 1px solid var(--graphite);
+        }
+
+        .carta-assinatura-nome {
+            font-size: 15px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .carta-assinatura-cargo {
+            font-size: 11px;
+            color: var(--gray);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ── SEÇÃO 11: AUTORIDADE ── */
+        .auth-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            margin-top: 48px;
+        }
+
+        .auth-block {
+            background: #222;
+            padding: 28px 24px;
+            border-top: 2px solid var(--graphite);
+        }
+
+        .auth-block-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .auth-block-text {
+            font-size: 14px;
+            color: var(--light-gray);
+            line-height: 1.65;
+        }
+
+        /* ── SEÇÃO 12: FAQ ── */
+        .faq-list-venda { max-width: 740px; margin: 0 auto 64px; }
+
+        .faq-item-v { border-bottom: 1px solid var(--graphite); }
+
+        .faq-btn-v {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 0;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            transition: color var(--t);
+        }
+
+        .faq-btn-v:hover { color: var(--light-gray); }
+
+        .faq-icon-v {
+            width: 22px;
+            height: 22px;
+            border: 1.5px solid var(--graphite);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            transition: all var(--t);
+        }
+
+        .faq-item-v.open .faq-icon-v { background: var(--white); border-color: var(--white); color: var(--black); }
+
+        .faq-body-v { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-item-v.open .faq-body-v { max-height: 400px; }
+
+        .faq-body-inner-v {
+            padding: 0 0 20px;
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.75;
+        }
+
+        /* ── MÉTODOS DE PAGAMENTO ── */
+        .payment-methods {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+
+        .pay-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 50px;
+            padding: 6px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--light-gray);
+        }
+
+        .pay-badge svg { flex-shrink: 0; }
+
+        /* ── FINAL CTA ── */
+        .final-cta-box {
+            background: var(--graphite);
+            padding: 56px 48px;
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .final-cta-price-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 8px;
+        }
+
+        .final-cta-price {
+            font-size: 14px;
+            color: var(--light-gray);
+            margin-bottom: 32px;
+        }
+
+        /* ── FOOTER ── */
+        #footer-venda {
+            background: var(--graphite);
+            padding: 32px 0;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer-venda-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-venda-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-venda-logo span {
+            font-size: 13px;
+            font-weight: 300;
+            letter-spacing: 6px;
+            color: var(--white);
+        }
+
+        .footer-venda-legal {
+            font-size: 11px;
+            color: var(--gray);
+            line-height: 1.6;
+            text-align: right;
+        }
+
+        /* ── LINK PARA O SITE ── */
+        .site-link-bar {
+            background: #222;
+            padding: 12px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--graphite);
+        }
+
+        .site-link-bar a {
+            font-size: 12px;
+            color: var(--gray);
+            letter-spacing: 1px;
+            transition: color var(--t);
+        }
+
+        .site-link-bar a:hover { color: var(--white); }
+
+        /* ── WA FAB ── */
+        .wa-fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+            width: 52px;
+            height: 52px;
+            background: var(--wa);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            transition: all var(--t);
+        }
+
+        .wa-fab:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+        .wa-fab svg { width: 24px; height: 24px; fill: white; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .stats-grid         { grid-template-columns: 1fr; }
+            .trust-bar          { grid-template-columns: repeat(2, 1fr); }
+            .steps-grid         { grid-template-columns: repeat(2, 1fr); }
+            .deliverables-grid  { grid-template-columns: 1fr; }
+            .audience-grid      { grid-template-columns: 1fr; }
+            .anchor-grid        { grid-template-columns: 1fr; }
+            .price-grid         { grid-template-columns: 1fr; }
+            .report-showcase    { grid-template-columns: 1fr; }
+            .auth-grid          { grid-template-columns: 1fr; }
+            .final-cta-box      { padding: 36px 24px; }
+        }
+
+        @media (max-width: 600px) {
+            .sec-dark, .sec-mid, .sec-light, .sec-graphite { padding: 60px 0; }
+            #promessa { min-height: auto; padding: 90px 0 60px; }
+            .trust-bar { grid-template-columns: 1fr 1fr; }
+            .steps-grid { grid-template-columns: 1fr; }
+            .footer-venda-legal { text-align: left; }
+        }
+
+        /* Reveal */
+        .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <!-- ── BARRA SUPERIOR ── -->
+    <div class="site-link-bar">
+        <a href="index.html">← Ver site completo com todos os serviços</a>
+    </div>
+
+    <!-- ── HEADER MINIMAL ── -->
+    <header id="header">
+        <div class="header-inner">
+            <div class="header-logo">
+                <div class="header-logo-icon">
+                    <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="50,28 27,4 30,18 44,25" fill="currentColor"/>
+                        <polygon points="50,28 73,4 70,18 56,25" fill="currentColor"/>
+                        <path d="M50,24 L68,37 L73,61 L65,86 L50,100 L35,86 L27,61 L32,37 Z"
+                              fill="none" stroke="currentColor" stroke-width="2.2"/>
+                        <polygon points="43,47 57,47 50,57" fill="currentColor"/>
+                        <line x1="50" y1="59" x2="33" y2="86" stroke="currentColor" stroke-width="1.8"/>
+                        <line x1="50" y1="59" x2="41" y2="90" stroke="currentColor" stroke-width="1.8"/>
+                        <line x1="50" y1="59" x2="50" y2="93" stroke="currentColor" stroke-width="1.8"/>
+                        <line x1="50" y1="59" x2="59" y2="90" stroke="currentColor" stroke-width="1.8"/>
+                        <line x1="50" y1="59" x2="67" y2="86" stroke="currentColor" stroke-width="1.8"/>
+                    </svg>
+                </div>
+                <div class="header-logo-text">
+                    <span class="header-logo-name">STRIX</span>
+                    <span class="header-logo-sub">Inteligência</span>
+                </div>
+            </div>
+            <a href="https://wa.me/5535997120007" target="_blank" rel="noopener" class="header-cta">
+                Falar pelo WhatsApp
+            </a>
+        </div>
+    </header>
+
+
+    <!-- ══════════════════════════════════════════════
+         SEÇÃO 1 — PROMESSA PRINCIPAL
+    ══════════════════════════════════════════════ -->
+    <section id="promessa">
+        <svg class="promessa-bg" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,28 27,4 30,18 44,25" fill="white"/>
+            <polygon points="50,28 73,4 70,18 56,25" fill="white"/>
+            <path d="M50,24 L68,37 L73,61 L65,86 L50,100 L35,86 L27,61 L32,37 Z" fill="none" stroke="white" stroke-width="2.2"/>
+            <polygon points="43,47 57,47 50,57" fill="white"/>
+            <line x1="50" y1="59" x2="33" y2="86" stroke="white" stroke-width="1.8"/>
+            <line x1="50" y1="59" x2="41" y2="90" stroke="white" stroke-width="1.8"/>
+            <line x1="50" y1="59" x2="50" y2="93" stroke="white" stroke-width="1.8"/>
+            <line x1="50" y1="59" x2="59" y2="90" stroke="white" stroke-width="1.8"/>
+            <line x1="50" y1="59" x2="67" y2="86" stroke="white" stroke-width="1.8"/>
+        </svg>
+
+        <div class="container">
+            <div class="promessa-content">
+                <p class="promessa-pre">Verificação Empresarial · Relatórios de Apoio à Decisão</p>
+                <h1 class="promessa-title">
+                    Contrate,<br>
+                    compre e negocie<br>
+                    <em>com mais segurança</em>
+                </h1>
+                <p class="promessa-sub">
+                    A Strix organiza dados públicos em relatórios claros para contratação, fornecedores,
+                    sócios e decisões empresariais sensíveis. Sem decisão automática, com finalidade declarada
+                    e análise proporcional.
+                </p>
+                <div class="cta-center" style="align-items:flex-start;">
+                    <a href="https://wa.me/5535997120007?text=Olá!%20Quero%20uma%20verificação%20empresarial%20Strix."
+                       target="_blank" rel="noopener" class="cta-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        Quero uma verificação empresarial
+                    </a>
+                    <span class="cta-note">Para RH, compras, jurídico, sócios e operações sensíveis</span>
+                </div>
+                <div class="promessa-trust">
+                    <span class="trust-item"><span class="trust-dot"></span>Fontes públicas e oficiais</span>
+                    <span class="trust-item"><span class="trust-dot"></span>Uso com finalidade declarada</span>
+                    <span class="trust-item"><span class="trust-dot"></span>Relatório executivo em PDF</span>
+                    <span class="trust-item"><span class="trust-dot"></span>Conformidade LGPD</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         SEÇÃO 2 — PROVA SOCIAL
+    ══════════════════════════════════════════════ -->
+    <section class="sec-mid">
+        <div class="container-wide">
+            <div class="container" style="padding:0;">
+                <h2 class="reveal">O problema em números reais</h2>
+                <p class="sub-text reveal">
+                    Esses casos acontecem todo dia. Com gente séria, em negócios normais.
+                    A diferença entre perder e se proteger é uma consulta.
+                </p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-block reveal">
+                    <span class="stat-sector">Produtor Rural · Agronegócio</span>
+                    <div class="stat-number">R$ 180 mil</div>
+                    <p class="stat-desc">
+                        Esse é o valor médio de uma venda de safra que não foi paga.
+                        O comprador tinha protestos abertos e empresas bloqueadas em outras praças.
+                        Uma consulta de R$ 100 teria mostrado tudo isso antes de assinar.
+                    </p>
+                </div>
+                <div class="stat-block reveal">
+                    <span class="stat-sector">Advocacia · Execução de dívidas</span>
+                    <div class="stat-number">75 milhões</div>
+                    <p class="stat-desc">
+                        É o número de processos judiciais em andamento no Brasil (CNJ, 2024).
+                        Em muitos deles, encontrar os bens do devedor é o que decide
+                        se o cliente recebe ou não. Nossos relatórios fazem isso em horas.
+                    </p>
+                </div>
+                <div class="stat-block reveal">
+                    <span class="stat-sector">Imobiliário · Locação e venda</span>
+                    <div class="stat-number">12 a 18 meses</div>
+                    <p class="stat-desc">
+                        É o tempo médio de um processo de despejo no Brasil.
+                        Um inquilino errado pode custar mais de R$ 50 mil entre
+                        aluguel atrasado, advogados e conserto do imóvel.
+                        Tudo isso evitável com uma verificação antes de assinar.
+                    </p>
+                </div>
+                <div class="stat-block reveal">
+                    <span class="stat-sector">Empresarial · Sociedades e contratos</span>
+                    <div class="stat-number">6 milhões</div>
+                    <p class="stat-desc">
+                        De empresas brasileiras estavam inadimplentes em 2023 (Serasa Experian).
+                        Seu próximo sócio, fornecedor ou parceiro pode ser uma delas.
+                        Saber disso antes de assinar evita anos de dor de cabeça.
+                    </p>
+                </div>
+            </div>
+
+            <div class="trust-bar reveal" style="margin-top:2px;">
+                <div class="trust-block">
+                    <div class="trust-block-value">24h</div>
+                    <div class="trust-block-label">Prazo máximo de entrega</div>
+                </div>
+                <div class="trust-block">
+                    <div class="trust-block-value">100%</div>
+                    <div class="trust-block-label">Fontes abertas e legais</div>
+                </div>
+                <div class="trust-block">
+                    <div class="trust-block-value">PDF</div>
+                    <div class="trust-block-label">Relatório formatado e assinado</div>
+                </div>
+                <div class="trust-block">
+                    <div class="trust-block-value">BR</div>
+                    <div class="trust-block-label">Atendimento em todo o Brasil</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         SEÇÃO 3 — APERTAR NA PEDRA
+    ══════════════════════════════════════════════ -->
+    <section class="sec-dark" style="background: linear-gradient(rgba(26,26,26,0.80), rgba(26,26,26,0.80)), url('assets/imagem/aperto-de-mao.jpg') center/cover no-repeat fixed;">
+        <div class="container">
+            <h2 class="reveal">Todo prejuízo começa com uma<br>decisão tomada sem informação</h2>
+            <p class="sub-text reveal">Infelizmente, não são casos raros. Pelo contrário, estão cada vez mais comuns.</p>
+
+            <div class="pain-stories">
+                <div class="pain-story reveal">
+                    <p class="pain-story-context">Caso · Agronegócio</p>
+                    <p class="pain-story-text">
+                        Um produtor rural fechou a venda de toda a safra com um comprador que apareceu
+                        do nada com uma proposta boa demais. Sem verificar, assinou o contrato.
+                        Entregou a mercadoria. Esperou o pagamento. O dinheiro nunca veio.
+                        Quando foi pesquisar, descobriu que o comprador tinha três empresas bloqueadas
+                        e um histórico de calotes em outras cidades.
+                    </p>
+                    <span class="pain-story-loss">Prejuízo estimado: R$ 180.000</span>
+                </div>
+
+                <div class="pain-story reveal">
+                    <p class="pain-story-context">Caso · Empresarial</p>
+                    <p class="pain-story-text">
+                        Uma empresária precisava de dinheiro para crescer. Um investidor apareceu
+                        com proposta boa e jeito de gente séria. Fecharam sociedade sem verificar nada.
+                        Seis meses depois, a Receita Federal cobrou R$ 900 mil de multa
+                        por dívida da empresa antiga do sócio.
+                        Por ser sócia também, ela teve que responder pela dívida junto.
+                    </p>
+                    <span class="pain-story-loss">Prejuízo estimado: inestimável</span>
+                </div>
+
+                <div class="pain-story reveal">
+                    <p class="pain-story-context">Caso · Imobiliário</p>
+                    <p class="pain-story-text">
+                        Uma imobiliária alugou um imóvel sem verificar o histórico do inquilino.
+                        Seis meses de aluguel sem pagar. Nada resolvido na conversa.
+                        Processo de despejo na Justiça que levou 16 meses.
+                        No final, o imóvel foi devolvido todo danificado.
+                    </p>
+                    <span class="pain-story-loss">Prejuízo estimado: R$ 55.000</span>
+                </div>
+
+                <div class="pain-close reveal">
+                    <p>
+                        Essas três histórias têm algo em comum: todas poderiam ter sido evitadas
+                        com uma verificação que custa menos de R$ 300.
+                        Não é falta de cuidado. É falta de informação.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         SEÇÃO 4 — DIAGNÓSTICO
+    ══════════════════════════════════════════════ -->
+    <section class="sec-mid">
+        <div class="container">
+            <h2 class="reveal">Você está prestes a tomar<br>uma dessas decisões?</h2>
+            <p class="sub-text reveal">Clique nos que se aplicam à sua situação.</p>
+
+            <div class="diagnostico-list">
+                <div class="diag-item reveal" onclick="toggleDiag(this)">
+                    <div class="diag-box"><span class="diag-check">✓</span></div>
+                    <span class="diag-text">Contratar alguém para um cargo de confiança</span>
+                </div>
+                <div class="diag-item reveal" onclick="toggleDiag(this)">
+                    <div class="diag-box"><span class="diag-check">✓</span></div>
+                    <span class="diag-text">Fechar a venda ou compra de uma safra</span>
+                </div>
+                <div class="diag-item reveal" onclick="toggleDiag(this)">
+                    <div class="diag-box"><span class="diag-check">✓</span></div>
+                    <span class="diag-text">Deixar sua propriedade rural para outra pessoa usar</span>
+                </div>
+                <div class="diag-item reveal" onclick="toggleDiag(this)">
+                    <div class="diag-box"><span class="diag-check">✓</span></div>
+                    <span class="diag-text">Trazer um novo sócio ou investidor para o seu negócio</span>
+                </div>
+                <div class="diag-item reveal" onclick="toggleDiag(this)">
+                    <div class="diag-box"><span class="diag-check">✓</span></div>
+                    <span class="diag-text">Comprar ou vender um imóvel ou terreno</span>
+                </div>
+                <div class="diag-item reveal" onclick="toggleDiag(this)">
+                    <div class="diag-box"><span class="diag-check">✓</span></div>
+                    <span class="diag-text">Fechar negócio com um fornecedor ou parceiro novo</span>
+                </div>
+                <div class="diag-item reveal" onclick="toggleDiag(this)">
+                    <div class="diag-box"><span class="diag-check">✓</span></div>
+                    <span class="diag-text">Alugar um imóvel para uma pessoa que você não conhece bem</span>
+                </div>
+                <div class="diag-item reveal" onclick="toggleDiag(this)">
+                    <div class="diag-box"><span class="diag-check">✓</span></div>
+                    <span class="diag-text">Cobrar uma dívida na Justiça e precisar encontrar os bens da pessoa</span>
+                </div>
+            </div>
+
+            <div class="diag-close reveal">
+                <p>
+                    Se você marcou qualquer um desses itens, continue lendo.
+                    O que vem a seguir pode poupar anos de dor de cabeça e muito dinheiro.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         SEÇÃO 5 — MODO DE PREPARO
+    ══════════════════════════════════════════════ -->
+    <section class="sec-dark" style="background: linear-gradient(rgba(26,26,26,0.80), rgba(26,26,26,0.80)), url('assets/imagem/pesquisa.jpg') center/cover no-repeat fixed;">
+        <div class="container-wide">
+            <div class="container" style="padding:0;">
+                <h2 class="reveal">Como funciona</h2>
+                <p class="sub-text reveal">
+                    Sem formulário complicado, sem visita, sem demora.
+                    Tudo pelo WhatsApp, do pedido até a entrega.
+                </p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step reveal">
+                    <p class="step-num">01</p>
+                    <h3 class="step-title">Você manda o CPF ou CNPJ</h3>
+                    <p class="step-desc">
+                        Só isso. Manda uma mensagem pelo WhatsApp com o nome e o número
+                        da pessoa ou empresa. Não sabe qual serviço escolher? A gente te ajuda a decidir, sem custo.
+                    </p>
+                </div>
+                <div class="step reveal">
+                    <p class="step-num">02</p>
+                    <h3 class="step-title">A gente pesquisa nas fontes oficiais</h3>
+                    <p class="step-desc">
+                        Consultamos a Justiça, a Receita Federal, os cartórios, o DETRAN, o Serasa
+                        e outros sistemas públicos. Tudo dentro da lei, tudo verificado, tudo cruzado.
+                    </p>
+                </div>
+                <div class="step reveal">
+                    <p class="step-num">03</p>
+                    <h3 class="step-title">Você recebe o relatório em PDF</h3>
+                    <p class="step-desc">
+                        Um arquivo organizado, fácil de ler e pronto para guardar.
+                        Nos serviços maiores, tem um resumo feito por inteligência artificial
+                        destacando os pontos que merecem atenção.
+                    </p>
+                </div>
+                <div class="step reveal">
+                    <p class="step-num">04</p>
+                    <h3 class="step-title">Você decide com segurança</h3>
+                    <p class="step-desc">
+                        Feche o negócio ou recuse, mas com informação real na mão.
+                        Não baseado em impressão, não em palavra de desconhecido.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         SEÇÃO 6 — ENTREGÁVEIS
+    ══════════════════════════════════════════════ -->
+    <section class="sec-mid">
+        <div class="container-wide">
+            <div class="container" style="padding:0;">
+                <h2 class="reveal">O que você recebe</h2>
+                <p class="sub-text reveal">
+                    Não jogamos um monte de dados na sua frente.
+                    Entregamos um relatório organizado, pronto para você usar na sua decisão.
+                </p>
+            </div>
+
+            <div class="deliverables-grid">
+                <div class="deliverable reveal">
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <p class="deliverable-title">Relatório em PDF</p>
+                    <p class="deliverable-desc">
+                        Arquivo pronto para guardar, mostrar ao seu advogado ou usar como prova.
+                        Formatado, com capa, índice e tudo organizado.
+                    </p>
+                </div>
+                <div class="deliverable reveal">
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <p class="deliverable-title">Entrega dentro do prazo</p>
+                    <p class="deliverable-desc">
+                        De verificação avulsa a pacote corporativo recorrente.
+                        O prazo começa a contar após a confirmação do escopo.
+                    </p>
+                </div>
+                <div class="deliverable reveal">
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <p class="deliverable-title">Resumo executivo claro</p>
+                    <p class="deliverable-desc">
+                        A análise organiza os pontos relevantes em linguagem clara,
+                        sem decisão automática e sem juridiquês desnecessário.
+                    </p>
+                </div>
+                <div class="deliverable reveal">
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <p class="deliverable-title">Vínculos relevantes</p>
+                    <p class="deliverable-desc">
+                        Quando aplicável, identificamos vínculos empresariais e registros públicos
+                        relevantes para a finalidade declarada pela empresa.
+                    </p>
+                </div>
+                <div class="deliverable reveal">
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="3" y1="9" x2="21" y2="9"/>
+                            <line x1="9" y1="21" x2="9" y2="9"/>
+                        </svg>
+                    </div>
+                    <p class="deliverable-title">Análise sob medida</p>
+                    <p class="deliverable-desc">
+                        Em casos corporativos mais sensíveis, o escopo pode incluir análise patrimonial,
+                        societária ou reputacional conforme a necessidade.
+                    </p>
+                </div>
+                <div class="deliverable reveal">
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36">
+                            <polyline points="9 11 12 14 22 4"/>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                    </div>
+                    <p class="deliverable-title">Limites de uso documentados</p>
+                    <p class="deliverable-desc">
+                        O relatório deixa claro que as informações são apoio à decisão,
+                        exigindo avaliação proporcional pela área responsável.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         SEÇÃO 7 — PARA QUEM É
+    ══════════════════════════════════════════════ -->
+    <section class="sec-dark">
+        <div class="container-wide">
+            <div class="container" style="padding:0;">
+                <span class="tag">Modelo empresarial</span>
+                <h2 class="reveal">Veja o tipo de relatório que a empresa recebe</h2>
+                <p class="sub-text reveal">
+                    O resultado não é uma planilha solta nem um amontoado de prints.
+                    É um relatório executivo, legível e preparado para apoiar uma decisão responsável.
+                </p>
+            </div>
+
+            <div class="report-showcase reveal">
+                <div class="report-panel">
+                    <div>
+                        <h3 class="report-panel-title">Relatório de Verificação Empresarial</h3>
+                        <p class="report-panel-text">
+                            Criado para RH, compras, jurídico e diretoria avaliarem sinais objetivos
+                            antes de contratar, liberar acesso, fechar parceria ou seguir com uma negociação.
+                        </p>
+                        <ul class="report-bullets">
+                            <li>Validação cadastral e status por categoria</li>
+                            <li>Resumo executivo com pontos de atenção</li>
+                            <li>Detalhamento de registros cíveis, trabalhistas e criminais</li>
+                            <li>Aviso legal, limites de uso e reforço de não discriminação</li>
+                        </ul>
+                    </div>
+                    <a href="relatorio-modelo.html"
+                       target="_blank" rel="noopener" class="cta-btn-outline">
+                        Ver relatório modelo
+                    </a>
+                </div>
+
+                <div class="report-preview" aria-label="Prévia visual do relatório Strix">
+                    <div class="report-preview-top">
+                        <span class="report-preview-brand">Strix</span>
+                        <span class="report-preview-code">STX-2026-06-A7F2</span>
+                    </div>
+                    <div class="report-preview-card">
+                        <div class="report-preview-label">Pessoa consultada</div>
+                        <div class="report-preview-name">João Carlos Mendes Alves</div>
+                    </div>
+                    <div class="report-status-grid">
+                        <div class="report-status">Antecedentes PF<br><span>Nada consta</span></div>
+                        <div class="report-status">Mandados BNMP<br><span>Não localizado</span></div>
+                        <div class="report-status">Execuções e cobranças<br><span class="warn">1 registro</span></div>
+                        <div class="report-status">Processos trabalhistas<br><span class="warn">1 registro</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec-light">
+        <div class="container-wide">
+            <div class="container" style="padding:0;">
+                <h2 class="reveal" style="color:var(--black);">Para quem é a Strix</h2>
+                <p class="sub-text reveal" style="color:var(--graphite);">
+                    Se você toma decisões que envolvem dinheiro, propriedade ou confiança,
+                    a Strix é para você.
+                </p>
+            </div>
+
+            <div class="audience-grid">
+                <div class="audience-card reveal">
+                    <img src="assets/imagem/fazenda2.jpg" alt="Produtor Rural" class="audience-card-img" style="object-position: center 60%;">
+                    <div class="audience-card-body">
+                        <span class="audience-label">Agronegócio</span>
+                        <h3 class="audience-title">Produtor rural e cafeicultor</h3>
+                        <p class="audience-pain">
+                            Você vende safra para compradores que aparecem do nada, deixa a terra para outras pessoas
+                            usarem e contrata safristas todo ano. São negócios grandes, feitos rápido,
+                            com gente que você quase não conhece.
+                        </p>
+                        <p class="audience-trigger">
+                            "Antes de fechar a venda da safra, você sabe de verdade quem é o comprador?"
+                        </p>
+                    </div>
+                </div>
+                <div class="audience-card reveal">
+                    <img src="assets/imagem/man-suit.jpg" alt="Advogado" class="audience-card-img">
+                    <div class="audience-card-body">
+                        <span class="audience-label">Advocacia</span>
+                        <h3 class="audience-title">Advogado(a) cível e empresarial</h3>
+                        <p class="audience-pain">
+                            Seus clientes precisam cobrar dívidas na Justiça, encontrar bens em
+                            processos de herança e saber se a outra parte é de confiança antes de fechar
+                            um acordo. Informação rápida muda o resultado do processo.
+                        </p>
+                        <p class="audience-trigger">
+                            "Saber onde estão os bens do devedor acelera o acordo e evita surpresas."
+                        </p>
+                    </div>
+                </div>
+                <div class="audience-card reveal">
+                    <img src="assets/imagem/empresario2.jpg" alt="Empresário" class="audience-card-img" style="object-position: center 25%;">
+                    <div class="audience-card-body">
+                        <span class="audience-label">Empresarial</span>
+                        <h3 class="audience-title">Empresário(a) em crescimento</h3>
+                        <p class="audience-pain">
+                            Você está trazendo um sócio, fechando parceria ou pensando em comprar
+                            outra empresa. Precisa saber com quem está negociando de verdade
+                            antes de colocar o nome no papel.
+                        </p>
+                        <p class="audience-trigger">
+                            "Você já pesquisou o histórico do seu futuro sócio antes de assinar?"
+                        </p>
+                    </div>
+                </div>
+                <div class="audience-card reveal">
+                    <img src="assets/imagem/imobiliario2.jpg" alt="Imobiliário" class="audience-card-img" style="object-position: center top;">
+                    <div class="audience-card-body">
+                        <span class="audience-label">Imobiliário</span>
+                        <h3 class="audience-title">Corretor(a) e imobiliária</h3>
+                        <p class="audience-pain">
+                            Seu cliente quer alugar ou vender, mas não tem como saber se o interessado
+                            tem dívidas, processos ou histórico de problema. Um inquilino errado significa
+                            meses de aluguel perdido e um processo longo na Justiça.
+                        </p>
+                        <p class="audience-trigger">
+                            "Verificar antes de alugar é sempre mais barato do que despejar depois."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         SEÇÃO 8 — ANCORAGEM
+    ══════════════════════════════════════════════ -->
+    <section class="sec-dark">
+        <div class="container">
+            <h2 class="reveal">Quanto custa não saber?</h2>
+            <p class="sub-text reveal">
+                Coloca na balança: o custo de uma consulta Strix
+                contra o custo de uma decisão tomada no escuro.
+            </p>
+
+            <div class="anchor-grid">
+                <div class="anchor-bad reveal">
+                    <p class="anchor-bad-title">O custo de não verificar</p>
+                    <div class="anchor-item">
+                        <span class="anchor-item-label">Contrato de safra não pago</span>
+                        <span class="anchor-item-value">R$ 80k–500k</span>
+                    </div>
+                    <div class="anchor-item">
+                        <span class="anchor-item-label">Entrar em sociedade com quem tem dívida oculta com o governo</span>
+                        <span class="anchor-item-value">Inestimável</span>
+                    </div>
+                    <div class="anchor-item">
+                        <span class="anchor-item-label">Processo de despejo completo</span>
+                        <span class="anchor-item-value">12 a 24 meses</span>
+                    </div>
+                    <div class="anchor-item">
+                        <span class="anchor-item-label">Advogado para tentar recuperar o que perdeu</span>
+                        <span class="anchor-item-value">R$ 10k–50k</span>
+                    </div>
+                    <div class="anchor-item">
+                        <span class="anchor-item-label">Comprar imóvel que tinha dívida escondida registrada em cartório</span>
+                        <span class="anchor-item-value">R$ 30k–200k</span>
+                    </div>
+                </div>
+
+                <div class="anchor-good reveal">
+                    <p class="anchor-good-label">O custo de verificar com a Strix</p>
+                    <p class="anchor-good-price">R$ 100</p>
+                    <p class="anchor-good-sub">a partir de · entrega em 2 horas úteis</p>
+                    <a href="https://wa.me/5535997120007?text=Quero%20fazer%20uma%20Consulta%20Avulsa."
+                       target="_blank" rel="noopener" class="cta-btn" style="margin:0 auto;">
+                        Solicitar agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         SEÇÃO 9 — PREÇO + BOTÃO
+    ══════════════════════════════════════════════ -->
+    <section class="sec-mid">
+        <div class="container-wide">
+            <div class="container" style="padding:0;">
+                <h2 class="reveal">Planos para empresas<br>que precisam decidir melhor</h2>
+                <p class="sub-text reveal">
+                    Comece com uma verificação avulsa, compre créditos para o time ou fale com a Strix
+                    para montar um fluxo corporativo com recorrência.
+                </p>
+            </div>
+
+            <div class="price-grid">
+                <div class="price-card reveal">
+                    <p class="price-card-num">01</p>
+                    <p class="price-card-name">Verificação Empresarial Avulsa</p>
+                    <p class="price-val">R$ 100 <span>/ pessoa</span></p>
+                    <p class="price-prazo">Para testar o modelo ou avaliar um caso pontual</p>
+                    <div class="price-divider"></div>
+                    <ul class="price-features">
+                        <li>Validação cadastral</li>
+                        <li>Consulta em bases públicas e judiciais</li>
+                        <li>Status por categoria</li>
+                        <li>Relatório empresarial em PDF</li>
+                        <li>Aviso legal e limites de uso</li>
+                    </ul>
+                    <a href="https://wa.me/5535997120007?text=Quero%20uma%20Verifica%C3%A7%C3%A3o%20Empresarial%20Avulsa."
+                       target="_blank" rel="noopener" class="price-cta">Solicitar</a>
+                </div>
+
+                <div class="price-card highlight reveal">
+                    <span class="price-card-badge">Empresas</span>
+                    <p class="price-card-num">02</p>
+                    <p class="price-card-name">Pacote Corporativo</p>
+                    <p class="price-val">R$ 850 <span>/ 10 créditos</span></p>
+                    <p class="price-prazo">Para RH, compras e jurídico usarem sob demanda</p>
+                    <div class="price-divider"></div>
+                    <ul class="price-features">
+                        <li>10 verificações empresariais</li>
+                        <li>Identificação da empresa solicitante</li>
+                        <li>Finalidade declarada por consulta</li>
+                        <li>Relatório padronizado para auditoria interna</li>
+                        <li>Orientação de enquadramento do caso</li>
+                    </ul>
+                    <a href="https://wa.me/5535997120007?text=Quero%20o%20Pacote%20Corporativo%20Strix%20com%2010%20cr%C3%A9ditos."
+                       target="_blank" rel="noopener" class="price-cta">Solicitar</a>
+                </div>
+
+                <div class="price-card reveal">
+                    <p class="price-card-num">03</p>
+                    <p class="price-card-name">Plano Empresarial</p>
+                    <p class="price-val">Sob consulta</p>
+                    <p class="price-prazo">Para volume recorrente, integração ou painel corporativo</p>
+                    <div class="price-divider"></div>
+                    <ul class="price-features">
+                        <li>Fluxo mensal de verificações</li>
+                        <li>Modelo de relatório personalizado</li>
+                        <li>Controle por solicitante e finalidade</li>
+                        <li>Suporte para área jurídica/compliance</li>
+                        <li>Preparado para futura integração com painel</li>
+                    </ul>
+                    <a href="https://wa.me/5535997120007?text=Quero%20falar%20sobre%20um%20Plano%20Empresarial%20Strix."
+                       target="_blank" rel="noopener" class="price-cta">Solicitar</a>
+                </div>
+            </div>
+            <div class="cta-center reveal" style="margin-top:12px;">
+                <p style="font-size:13px;color:var(--gray);margin-bottom:20px;">
+                    Não sabe qual escolher? Fale com a equipe, orientamos gratuitamente.
+                </p>
+                <a href="https://wa.me/5535997120007?text=Não%20sei%20qual%20serviço%20escolher.%20Pode%20me%20orientar?"
+                   target="_blank" rel="noopener" class="cta-btn-outline">
+                    Quero orientação gratuita
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         SEÇÃO 10 — CARTA ABERTA
+    ══════════════════════════════════════════════ -->
+    <section class="sec-dark" style="padding-top:0;">
+        <img src="assets/imagem/confianca.jpg" alt="" class="sec-photo" style="filter:brightness(0.4); object-position: center 35%;">
+        <div class="container" style="padding-top:88px;">
+            <div class="carta reveal">
+                <p class="carta-titulo">Uma carta da equipe Strix</p>
+
+                <div class="carta-body">
+                    <p>
+                        Escolhemos esse trabalho por um motivo simples: quando você tem a informação certa,
+                        você toma decisões melhores. E decisões melhores protegem o que você levou anos pra construir.
+                    </p>
+                    <p>
+                        Vimos de perto o que acontece quando as pessoas fecham negócio sem verificar quem está
+                        do outro lado. Safras que não são pagas. Sociedades que viram processo na Justiça.
+                        Imóveis dados pra quem não pagou nem o primeiro mês. Pessoas honestas
+                        e trabalhadoras sendo prejudicadas. Não porque foram descuidadas,
+                        mas porque simplesmente não tinham como saber.
+                    </p>
+                    <p>
+                        A Strix existe pra mudar isso.
+                    </p>
+                    <p>
+                        A Strix não monitora pessoas, não acessa sistemas restritos e não toma decisão no lugar da empresa.
+                        O que fazemos é organizar dados públicos e registros oficiais com método,
+                        contexto e clareza. Juntamos tudo em um relatório objetivo para apoiar
+                        uma decisão responsável.
+                    </p>
+                    <p>
+                        Nossa regra é simples: só entregamos o que é verificável, só buscamos
+                        o que é permitido e tratamos cada solicitação com o sigilo que ela exige.
+                    </p>
+                    <p>
+                        Se você chegou até aqui, é porque tem uma decisão importante pela frente.
+                        Faz todo o sentido tomar essa decisão com as melhores informações na mão.
+                        A equipe Strix está pronta quando sua empresa precisar.
+                    </p>
+                </div>
+
+                <div class="carta-assinatura">
+                    <p class="carta-assinatura-nome">STRIX INTELIGÊNCIA</p>
+                    <p class="carta-assinatura-cargo">Equipe de Inteligência e Análise</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         SEÇÃO 11 — AUTORIDADE
+    ══════════════════════════════════════════════ -->
+    <section class="sec-mid" style="padding-top:0;">
+        <img src="assets/imagem/seguranca.jpg" alt="" class="sec-photo">
+        <div class="container-wide" style="padding-top:88px;">
+            <div class="container" style="padding:0;">
+                <h2 class="reveal">Por que confiar na Strix</h2>
+                <p class="sub-text reveal">
+                    Confiança não é promessa. É o que você vê quando analisa como trabalhamos.
+                </p>
+            </div>
+
+            <div class="auth-grid">
+                <div class="auth-block reveal">
+                    <p class="auth-block-label">Uso responsável das informações</p>
+                    <p class="auth-block-text">
+                        A Strix trabalha com fontes públicas, finalidade declarada e tratamento proporcional.
+                        Nada ilegal, nenhum acesso indevido, nenhum uso para decisão automática.
+                    </p>
+                </div>
+                <div class="auth-block reveal">
+                    <p class="auth-block-label">Informações públicas e verificadas</p>
+                    <p class="auth-block-text">
+                        Toda informação que entregamos vem de fontes públicas: Justiça, Receita Federal,
+                        cartórios, DETRAN, Serasa e portais do governo. São dados de acesso legítimo.
+                        A diferença está no método, na organização e no contexto da análise.
+                    </p>
+                </div>
+                <div class="auth-block reveal">
+                    <p class="auth-block-label">Seus dados protegidos</p>
+                    <p class="auth-block-text">
+                        Seguimos a <strong style="color:var(--white);">Lei de Proteção de Dados (LGPD)</strong>.
+                        As informações que você nos envia ficam guardadas em segurança
+                        e são descartadas depois que o trabalho é entregue.
+                    </p>
+                </div>
+                <div class="auth-block reveal">
+                    <p class="auth-block-label">Equipe com experiência real</p>
+                    <p class="auth-block-text">
+                        Somos profissionais com formação e experiência em segurança e inteligência.
+                        Não é improviso. Cada relatório tem um método definido e passa por revisão
+                        antes de ser entregue.
+                    </p>
+                </div>
+                <div class="auth-block reveal">
+                    <p class="auth-block-label">Sigilo total garantido</p>
+                    <p class="auth-block-text">
+                        Os dados da empresa solicitante e da pessoa consultada são tratados com sigilo.
+                        O relatório existe para apoio interno, dentro da finalidade informada.
+                    </p>
+                </div>
+                <div class="auth-block reveal">
+                    <p class="auth-block-label">Atendimento em todo o Brasil</p>
+                    <p class="auth-block-text">
+                        Você pode ser de qualquer cidade do Brasil. A pessoa que quer verificar também.
+                        Não precisa de visita, não precisa de nada presencial.
+                        Tudo pelo WhatsApp, com a mesma qualidade.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         SEÇÃO 12 — FAQ + REPETIR PREÇO
+    ══════════════════════════════════════════════ -->
+    <section class="sec-dark">
+        <div class="container">
+            <h2 class="reveal" style="text-align:center;">Dúvidas antes de decidir</h2>
+            <p class="sub-text reveal" style="text-align:center;margin:0 auto 48px;">
+                Respondemos as principais objeções com transparência total.
+            </p>
+
+            <div class="faq-list-venda">
+                <div class="faq-item-v">
+                    <button class="faq-btn-v" onclick="toggleFaqV(this)">
+                        É legal contratar esse tipo de serviço?
+                        <span class="faq-icon-v">+</span>
+                    </button>
+                    <div class="faq-body-v">
+                        <div class="faq-body-inner-v">
+                            Sim. A Strix trabalha com fontes públicas e finalidade declarada.
+                            Não acessamos sistemas restritos, não obtemos informação privada indevidamente
+                            e não fazemos decisão automática de contratação.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item-v">
+                    <button class="faq-btn-v" onclick="toggleFaqV(this)">
+                        Como vocês conseguem essas informações?
+                        <span class="faq-icon-v">+</span>
+                    </button>
+                    <div class="faq-body-v">
+                        <div class="faq-body-inner-v">
+                            Da mesma forma que qualquer pessoa poderia pesquisar, mas com método e experiência.
+                            Consultamos a Justiça, a Receita Federal, os cartórios, o DETRAN, o Serasa
+                            e portais do governo. O diferencial é saber exatamente onde procurar
+                            e como juntar tudo de forma clara.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item-v">
+                    <button class="faq-btn-v" onclick="toggleFaqV(this)">
+                        Minha empresa e a pessoa consultada ficam protegidas?
+                        <span class="faq-icon-v">+</span>
+                    </button>
+                    <div class="faq-body-v">
+                        <div class="faq-body-inner-v">
+                            Os dados são tratados com sigilo e finalidade definida. A Strix recomenda
+                            que a empresa use o relatório apenas como apoio proporcional à decisão,
+                            respeitando LGPD, regras trabalhistas e políticas internas.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item-v">
+                    <button class="faq-btn-v" onclick="toggleFaqV(this)">
+                        Preciso contratar o produto mais caro?
+                        <span class="faq-icon-v">+</span>
+                    </button>
+                    <div class="faq-body-v">
+                        <div class="faq-body-inner-v">
+                            Não. Para um caso pontual, a verificação avulsa resolve.
+                            Para volume de RH, compras ou jurídico, o pacote corporativo costuma fazer mais sentido.
+                            Para recorrência ou integração, montamos um plano empresarial.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item-v">
+                    <button class="faq-btn-v" onclick="toggleFaqV(this)">
+                        Como faço para solicitar? É complicado?
+                        <span class="faq-icon-v">+</span>
+                    </button>
+                    <div class="faq-body-v">
+                        <div class="faq-body-inner-v">
+                            É simples. A empresa informa a finalidade, o tipo de verificação
+                            e os dados mínimos necessários. Confirmamos o escopo, registramos
+                            a solicitação e entregamos o relatório no canal combinado.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item-v">
+                    <button class="faq-btn-v" onclick="toggleFaqV(this)">
+                        As informações do relatório são confiáveis?
+                        <span class="faq-icon-v">+</span>
+                    </button>
+                    <div class="faq-body-v">
+                        <div class="faq-body-inner-v">
+                            Sim. Tudo vem direto das fontes: sistemas da Justiça, da Receita Federal,
+                            dos cartórios e de outros órgãos oficiais. Não inventamos nada,
+                            não supomos nada. O que entregamos é o que os sistemas públicos registram.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item-v">
+                    <button class="faq-btn-v" onclick="toggleFaqV(this)">
+                        E se eu precisar de algo que não está nos produtos listados?
+                        <span class="faq-icon-v">+</span>
+                    </button>
+                    <div class="faq-body-v">
+                        <div class="faq-body-inner-v">
+                            Fale com a Strix. Avaliamos a necessidade da empresa
+                            e podemos montar um fluxo sob medida para o seu cenário.
+                            Casos diferentes são analisados com escopo definido.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REPETIÇÃO DO PREÇO -->
+            <div class="final-cta-box reveal">
+                <p class="final-cta-price-label">Preços e prazos</p>
+                <p class="final-cta-price">
+                    Verificação Avulsa · R$ 100 &nbsp;|&nbsp;
+                    Pacote Corporativo · R$ 850 / 10 créditos<br>
+                    Plano Empresarial · Sob consulta
+                </p>
+                <a href="https://wa.me/5535997120007?text=Olá!%20Quero%20uma%20verificação%20empresarial%20Strix."
+                   target="_blank" rel="noopener" class="cta-btn" style="margin: 0 auto;">
+                    Quero falar com a Strix
+                </a>
+                <div class="payment-methods">
+                    <span class="pay-badge">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+                        </svg>
+                        Cartão em até 12x
+                    </span>
+                    <span class="pay-badge">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+                        </svg>
+                        Pix à vista
+                    </span>
+                    <span class="pay-badge">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        Mercado Pago
+                    </span>
+                </div>
+                <p class="cta-note" style="margin-top:10px;">
+                    Relatórios com finalidade declarada, fontes públicas e apoio à decisão responsável
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ── FOOTER MINIMAL ── -->
+    <footer id="footer-venda">
+        <div class="container-wide">
+            <div class="footer-venda-inner">
+                <div class="footer-venda-logo">
+                    <svg viewBox="0 0 100 120" width="22" height="auto" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="50,28 27,4 30,18 44,25" fill="white"/>
+                        <polygon points="50,28 73,4 70,18 56,25" fill="white"/>
+                        <path d="M50,24 L68,37 L73,61 L65,86 L50,100 L35,86 L27,61 L32,37 Z" fill="none" stroke="white" stroke-width="2.2"/>
+                        <polygon points="43,47 57,47 50,57" fill="white"/>
+                        <line x1="50" y1="59" x2="33" y2="86" stroke="white" stroke-width="1.8"/>
+                        <line x1="50" y1="59" x2="41" y2="90" stroke="white" stroke-width="1.8"/>
+                        <line x1="50" y1="59" x2="50" y2="93" stroke="white" stroke-width="1.8"/>
+                        <line x1="50" y1="59" x2="59" y2="90" stroke="white" stroke-width="1.8"/>
+                        <line x1="50" y1="59" x2="67" y2="86" stroke="white" stroke-width="1.8"/>
+                    </svg>
+                    <span>STRIX</span>
+                </div>
+                <p class="footer-venda-legal">
+                    Strix Inteligência | Enxergamos o que outros não veem<br>
+                    Serviços realizados com fontes públicas, finalidade declarada e atenção à LGPD.<br>
+                    <a href="index.html" style="color:var(--gray);text-decoration:underline;">Ver site completo</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WA FAB -->
+    <a href="https://wa.me/5535997120007" target="_blank" rel="noopener" class="wa-fab" title="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+
+    <script>
+        // FAQ accordion
+        function toggleFaqV(btn) {
+            const item = btn.closest('.faq-item-v');
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item-v').forEach(i => {
+                i.classList.remove('open');
+                i.querySelector('.faq-icon-v').textContent = '+';
+            });
+            if (!isOpen) {
+                item.classList.add('open');
+                btn.querySelector('.faq-icon-v').textContent = '×';
+            }
+        }
+
+        // Diagnóstico checkboxes
+        function toggleDiag(el) {
+            el.classList.toggle('checked');
+        }
+
+        // Scroll reveal
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Owl watermark on price cards
+        const owlMark = `<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+            <polygon points="50,28 27,4 30,18 44,25" fill="white"/>
+            <polygon points="50,28 73,4 70,18 56,25" fill="white"/>
+            <path d="M50,24 L68,37 L73,61 L65,86 L50,100 L35,86 L27,61 L32,37 Z" fill="none" stroke="white" stroke-width="2.2"/>
+            <polygon points="43,47 57,47 50,57" fill="white"/>
+            <line x1="50" y1="59" x2="33" y2="86" stroke="white" stroke-width="1.8"/>
+            <line x1="50" y1="59" x2="41" y2="90" stroke="white" stroke-width="1.8"/>
+            <line x1="50" y1="59" x2="50" y2="93" stroke="white" stroke-width="1.8"/>
+            <line x1="50" y1="59" x2="59" y2="90" stroke="white" stroke-width="1.8"/>
+            <line x1="50" y1="59" x2="67" y2="86" stroke="white" stroke-width="1.8"/>
+        </svg>`;
+
+        document.querySelectorAll('.price-card').forEach(card => {
+            const wm = document.createElement('div');
+            wm.setAttribute('aria-hidden','true');
+            wm.style.cssText = 'position:absolute;bottom:-12px;right:-12px;width:90px;height:108px;opacity:0.055;pointer-events:none;transition:opacity 0.3s ease';
+            wm.innerHTML = owlMark;
+            card.appendChild(wm);
+            card.addEventListener('mouseenter', () => wm.style.opacity = '0.1');
+            card.addEventListener('mouseleave', () => wm.style.opacity = '0.055');
+        });
+    </script>
+
+</body>
+</html>
+
+
