@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Investigação particular, inteligência de dados e due diligence. Operação 100% legal. Atendimento em todo o Brasil.">
+    <meta name="description" content="Verificação de pessoas e empresas com relatórios automáticos entregues em minutos. Investigação particular, inteligência de dados e due diligence 100% legal, com atendimento em todo o Brasil.">
     <meta property="og:title" content="Strix Inteligência | Enxergamos o que outros não veem">
-    <meta property="og:description" content="Proteja seu patrimônio com informação precisa, ética e entregue com discrição total.">
+    <meta property="og:description" content="Proteja seu patrimônio com relatórios automáticos, sigilosos e entregues em minutos.">
     <title>Strix Inteligência | Enxergamos o que outros não veem</title>
     <style>
         /* ============================================================
@@ -87,6 +87,71 @@
         }
 
         .section-header { margin-bottom: 56px; }
+
+        /* ============================================================
+           ANCORAGEM DE VALOR
+        ============================================================ */
+        .anchor-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 2px;
+            margin-top: 8px;
+        }
+
+        .anchor-bad {
+            background: var(--graphite);
+            padding: 34px 32px;
+        }
+
+        .anchor-bad-title {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .anchor-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 14px;
+        }
+
+        .anchor-item:last-child { border-bottom: none; }
+        .anchor-item-label { color: var(--light-gray); }
+        .anchor-item-value { color: var(--white); font-weight: 700; white-space: nowrap; }
+
+        .anchor-good {
+            background: var(--white);
+            color: var(--black);
+            padding: 34px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .anchor-good-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--graphite);
+            margin-bottom: 10px;
+        }
+
+        .anchor-good-price { font-size: 44px; font-weight: 700; margin-bottom: 4px; }
+        .anchor-good-sub { font-size: 13px; color: var(--gray); margin-bottom: 22px; }
+
+        @media (max-width: 800px) {
+            .anchor-grid { grid-template-columns: 1fr; }
+        }
 
         /* ============================================================
            BUTTONS
@@ -1219,7 +1284,7 @@
                 <li><a href="#como-funciona">Como funciona</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contato">Contato</a></li>
-                <li><a href="vendas.html" style="color:var(--white);font-weight:600;">Ver Preços</a></li>
+                <li><a href="#servicos" style="color:var(--white);font-weight:600;">Ver Preços</a></li>
             </ul>
 
             <div class="nav-cta-desktop">
@@ -1242,7 +1307,7 @@
         <a href="#como-funciona" onclick="closeMenu()">Como funciona</a>
         <a href="#faq"           onclick="closeMenu()">FAQ</a>
         <a href="#contato"       onclick="closeMenu()">Contato</a>
-        <a href="vendas.html"    onclick="closeMenu()" style="font-weight:600;">Ver Preços</a>
+        <a href="#servicos"      onclick="closeMenu()" style="font-weight:600;">Ver Preços</a>
         <a href="https://wa.me/5535997120007" target="_blank" rel="noopener"
            class="btn btn-wa" onclick="closeMenu()">
             Fale pelo WhatsApp
@@ -1271,21 +1336,23 @@
         <div class="container">
             <div class="hero-content">
                 <p class="hero-label">Investigação Particular · Inteligência de Dados · Due Diligence</p>
-                <h1 class="hero-title">Enxergamos o que outros não veem</h1>
+                <h1 class="hero-title">Descubra a verdade antes de assinar, em minutos</h1>
                 <p class="hero-sub">
-                    Proteja seu patrimônio, seus contratos e suas decisões com informação
-                    precisa, ética e entregue com discrição total.
+                    Relatórios 100% legais e sigilosos sobre pessoas e empresas, com dados oficiais.
+                    Enxergamos o que outros não veem, para você nunca ser pego de surpresa.
                 </p>
                 <div class="hero-ctas">
+                    <a href="#servicos" class="btn btn-primary">
+                        Ver serviços e preços
+                    </a>
                     <a href="https://wa.me/5535997120007" target="_blank" rel="noopener"
-                       class="btn btn-primary">
+                       class="btn btn-outline">
                         Fale com um especialista
                     </a>
-                    <a href="vendas.html" class="btn btn-outline">Ver serviços e preços</a>
                 </div>
                 <p class="hero-reply-note">
                     <span class="hero-reply-dot"></span>
-                    Respondemos em até 2 horas · Sem burocracia · Pelo WhatsApp
+                    Pagamento online · Relatório automático em minutos · Pix ou cartão
                 </p>
                 <div class="hero-badges">
                     <span class="hero-badge">100% fontes abertas e legais</span>
@@ -1371,162 +1438,110 @@
                 <p class="services-block-label">Grupo 1</p>
                 <h2 class="services-block-title">Inteligência de Dados</h2>
                 <p class="services-block-sub">
-                    Relatórios digitais em PDF entregues dentro do prazo.
-                    Cada produto inclui tudo do anterior. Você paga pelo que realmente precisa.
+                    Relatórios automáticos em PDF, entregues por e-mail em minutos.
+                    Escolha o produto certo para o que você precisa verificar.
                 </p>
                 <div class="ladder-note">
-                    Escada de valor: cada nível inclui o produto anterior completo
+                    Pagamento online · busca automática · relatório em minutos
                 </div>
+
+                <a href="relatorio-modelo.html" target="_blank" rel="noopener"
+                   style="display:inline-block;margin-bottom:32px;color:var(--light-gray);font-size:13px;text-decoration:underline;">
+                    Veja um exemplo real de relatório entregue pela Strix →
+                </a>
 
                 <div class="services-grid">
 
                     <!-- 01 -->
                     <div class="service-card reveal">
                         <p class="sc-num">01</p>
-                        <h3 class="sc-name">Consulta Avulsa</h3>
-                        <p class="sc-price">R$ 100 <span>/ pessoa ou empresa</span></p>
-                        <p class="sc-prazo">Prazo: até 2 horas úteis</p>
+                        <h3 class="sc-name">PF Essencial</h3>
+                        <p class="sc-price">R$ 97 <span>/ consulta</span></p>
+                        <p class="sc-prazo">Prazo: minutos, automático</p>
                         <div class="sc-divider"></div>
                         <p class="sc-pitch">
-                            A verificação mais rápida do mercado. Em até 2 horas você sabe se a
-                            pessoa ou empresa com quem está negociando tem dívidas, processos na
-                            Justiça ou nome sujo. Um investimento de R$&nbsp;100 que pode evitar
-                            um prejuízo de milhares.
+                            Checagem rápida de uma pessoa física. Em minutos você sabe se ela tem
+                            antecedentes, processos na Justiça, dívidas ou nome sujo, antes de
+                            contratar, negociar ou confiar.
                         </p>
                         <ul class="sc-features">
-                            <li>Situação do CPF ou CNPJ na Receita Federal</li>
-                            <li>Processos judiciais em todos os tribunais do Brasil</li>
-                            <li>Dívidas, protestos em cartório e histórico de crédito</li>
-                            <li>O que aparece sobre essa pessoa ou empresa na internet</li>
-                            <li>Relatório em PDF pronto para guardar ou apresentar</li>
+                            <li>Antecedentes e mandados de prisão</li>
+                            <li>Processos judiciais (cível, trabalhista, criminal)</li>
+                            <li>Protestos, cheques e score de crédito</li>
+                            <li>Relatório técnico em PDF</li>
+                            <li>Entrega automática por e-mail em minutos</li>
                         </ul>
-                        <a href="https://wa.me/5535997120007?text=Olá!%20Tenho%20interesse%20na%20Consulta%20Avulsa."
-                           target="_blank" rel="noopener" class="sc-cta">Solicitar este serviço</a>
+                        <a href="https://www.viris.com.br/verificacao-empresarial?produto=pf"
+                           target="_blank" rel="noopener" class="sc-cta">Fazer verificação</a>
                     </div>
 
                     <!-- 02 -->
                     <div class="service-card reveal">
                         <p class="sc-num">02</p>
-                        <h3 class="sc-name">Report Smart</h3>
-                        <p class="sc-price">R$ 280 <span>/ pessoa ou empresa</span></p>
-                        <p class="sc-prazo">Prazo: até 24 horas úteis</p>
+                        <h3 class="sc-name">Consulta PJ</h3>
+                        <p class="sc-price">R$ 297 <span>/ consulta</span></p>
+                        <p class="sc-prazo">Prazo: minutos, automático</p>
                         <div class="sc-divider"></div>
-                        <div class="sc-includes">+ Tudo da Consulta Avulsa</div>
                         <p class="sc-pitch">
-                            Vai além dos antecedentes: você descobre endereços, telefones,
-                            e-mails atualizados, os carros que a pessoa tem e um mapa completo
-                            de quem ela conhece e com quem faz negócios. Ideal para verificar
-                            sócios, compradores de safra e parceiros.
+                            Due diligence completa de uma empresa. Antes de fechar negócio, virar
+                            sócio ou contratar um fornecedor, saiba quem realmente está por trás
+                            do CNPJ.
                         </p>
                         <ul class="sc-features">
-                            <li>Endereços, telefones e e-mails atualizados</li>
-                            <li>Mapa de conexões: sócios, parentes e empresas relacionadas</li>
-                            <li>Carros registrados no nome da pessoa (com valor de mercado)</li>
-                            <li>Resumo automático do perfil feito com inteligência artificial</li>
+                            <li>Dados cadastrais e faturamento presumido</li>
+                            <li>Quadro societário, UBO e PEP</li>
+                            <li>Idoneidade (CEIS, CNEP, TCU, CNIA)</li>
+                            <li>Imagem da sede (Street View)</li>
+                            <li>Relatório técnico em PDF</li>
                         </ul>
-                        <a href="https://wa.me/5535997120007?text=Olá!%20Tenho%20interesse%20no%20Report%20Smart."
-                           target="_blank" rel="noopener" class="sc-cta">Solicitar este serviço</a>
+                        <a href="https://www.viris.com.br/verificacao-empresarial?produto=pj"
+                           target="_blank" rel="noopener" class="sc-cta">Fazer verificação</a>
                     </div>
 
                     <!-- 03 -->
-                    <div class="service-card reveal">
+                    <div class="service-card featured reveal">
                         <p class="sc-num">03</p>
-                        <h3 class="sc-name">Strix Full</h3>
-                        <p class="sc-price">R$ 400 <span>/ pessoa ou empresa</span></p>
-                        <p class="sc-prazo">Prazo: até 24 horas úteis</p>
+                        <h3 class="sc-name">Combo PJ (PJ+PF)</h3>
+                        <p class="sc-price">R$ 397 <span>/ consulta</span></p>
+                        <p class="sc-prazo">Prazo: minutos, automático</p>
                         <div class="sc-divider"></div>
-                        <div class="sc-includes">+ Tudo do Report Smart</div>
+                        <div class="sc-includes">+ Tudo da Consulta PJ e da PF Essencial</div>
                         <p class="sc-pitch">
-                            Para negócios de valor, saber que a pessoa não tem dívida não é
-                            suficiente. Você precisa saber se os bens dela estão livres ou
-                            presos pela Justiça. Este relatório consulta todos os cartórios de
-                            imóveis do Brasil em uma única busca.
+                            A empresa e o responsável verificados juntos, com cruzamento de
+                            vínculos societários. Para quando você precisa ver o quadro completo
+                            antes de assinar.
                         </p>
                         <ul class="sc-features">
-                            <li>Imóveis registrados em todos os cartórios de imóveis do Brasil</li>
-                            <li>Procurações em cartório (quem pode agir no nome da pessoa)</li>
-                            <li>Hipotecas, penhoras e restrições sobre os bens</li>
-                            <li>Heranças e doações registradas em cartório</li>
-                            <li>Bens bloqueados ou indisponíveis por ordem judicial</li>
-                            <li>Análise patrimonial completa feita com inteligência artificial</li>
+                            <li>Cruzamento de vínculos societários</li>
+                            <li>Diagrama visual da estrutura</li>
+                            <li>Conclusão técnica cruzada</li>
+                            <li>Relatório técnico em PDF</li>
                         </ul>
-                        <a href="https://wa.me/5535997120007?text=Olá!%20Tenho%20interesse%20no%20Strix%20Full."
-                           target="_blank" rel="noopener" class="sc-cta">Solicitar este serviço</a>
+                        <a href="https://www.viris.com.br/verificacao-empresarial?produto=combo"
+                           target="_blank" rel="noopener" class="sc-cta">Fazer verificação</a>
                     </div>
 
                     <!-- 04 -->
                     <div class="service-card reveal">
                         <p class="sc-num">04</p>
-                        <h3 class="sc-name">Dossiê Strix</h3>
-                        <p class="sc-price">R$ 750 <span>/ pessoa ou empresa</span></p>
-                        <p class="sc-prazo">Prazo: 48 a 72 horas úteis</p>
+                        <h3 class="sc-name">Integridade Rural (Agro)</h3>
+                        <p class="sc-price">R$ 397 <span>/ consulta</span></p>
+                        <p class="sc-prazo">Prazo: minutos, automático</p>
                         <div class="sc-divider"></div>
-                        <div class="sc-includes">+ Tudo do Strix Full</div>
                         <p class="sc-pitch">
-                            Uma investigação que vai fundo. Analisamos a pessoa, todas as
-                            empresas que ela tem ou já teve, quem são os sócios dela, e
-                            mostramos como o patrimônio cresceu ou mudou ao longo dos anos.
-                            Para quem não pode se dar ao luxo de errar na escolha.
+                            Para produtor rural ou empresa do agro. Antes de fechar a venda da
+                            safra ou arrendar terra, verifique embargos, trabalho forçado e
+                            regularidade fiscal.
                         </p>
                         <ul class="sc-features">
-                            <li>Análise de todas as empresas que a pessoa tem ou já teve</li>
-                            <li>Investigação dos sócios diretos (quem faz negócios com ela)</li>
-                            <li>Linha do tempo: como o patrimônio mudou ao longo dos anos</li>
-                            <li>Relatório profissional com sumário e conclusão técnica assinada</li>
+                            <li>Embargos e autuações ambientais (IBAMA)</li>
+                            <li>Trabalho forçado / condições análogas à escravidão</li>
+                            <li>Regularidade fiscal rural (CNDIR, PGFN)</li>
+                            <li>Aceita CPF (produtor) ou CNPJ (empresa)</li>
+                            <li>Relatório técnico em PDF</li>
                         </ul>
-                        <a href="https://wa.me/5535997120007?text=Olá!%20Tenho%20interesse%20no%20Dossiê%20Strix."
-                           target="_blank" rel="noopener" class="sc-cta">Solicitar este serviço</a>
-                    </div>
-
-                    <!-- 05 -->
-                    <div class="service-card reveal">
-                        <p class="sc-num">05</p>
-                        <h3 class="sc-name">Due Diligence Básica</h3>
-                        <p class="sc-price">R$ 990 <span>/ empresa</span></p>
-                        <p class="sc-prazo">Prazo: 3 a 5 dias úteis</p>
-                        <div class="sc-divider"></div>
-                        <div class="sc-includes">+ Tudo do Dossiê Strix</div>
-                        <p class="sc-pitch">
-                            Antes de comprar uma empresa, abrir uma sociedade ou assinar
-                            um contrato grande, você precisa saber se a empresa é idônea,
-                            se está em dia com todas as obrigações legais e se a marca que
-                            ela usa é realmente dela.
-                        </p>
-                        <ul class="sc-features">
-                            <li>Análise completa de quem são os donos reais da empresa</li>
-                            <li>Certidões negativas: Receita Federal, Estado, Prefeitura, Trabalhista e FGTS</li>
-                            <li>Verificação da marca no INPI (o nome da empresa está protegido?)</li>
-                            <li>Análise da reputação da empresa no mercado e na mídia</li>
-                            <li>Relatório executivo assinado por nossos especialistas</li>
-                        </ul>
-                        <a href="https://wa.me/5535997120007?text=Olá!%20Tenho%20interesse%20na%20Due%20Diligence%20Básica."
-                           target="_blank" rel="noopener" class="sc-cta">Solicitar este serviço</a>
-                    </div>
-
-                    <!-- 06 -->
-                    <div class="service-card featured reveal">
-                        <p class="sc-num">06</p>
-                        <h3 class="sc-name">Due Diligence Completa</h3>
-                        <p class="sc-price">R$ 1.500 <span>/ empresa</span></p>
-                        <p class="sc-prazo">Prazo: 5 a 7 dias úteis</p>
-                        <div class="sc-divider"></div>
-                        <div class="sc-includes">+ Tudo da Due Diligence Básica</div>
-                        <p class="sc-pitch">
-                            O relatório mais completo para grandes negócios. Investigamos a
-                            empresa inteira e cada pessoa que está por trás dela. No final,
-                            um especialista apresenta os resultados para você em reunião
-                            online, tirando todas as dúvidas ao vivo.
-                        </p>
-                        <ul class="sc-features">
-                            <li>Dossiê individual de cada sócio da empresa</li>
-                            <li>Todas as empresas ligadas e participações entre elas</li>
-                            <li>Contratos com o governo e licitações (Portal da Transparência)</li>
-                            <li>Histórico completo de como a empresa mudou ao longo do tempo</li>
-                            <li>Reunião online com especialista para apresentar os resultados</li>
-                            <li>Relatório executivo premium com apresentação visual</li>
-                        </ul>
-                        <a href="https://wa.me/5535997120007?text=Olá!%20Tenho%20interesse%20na%20Due%20Diligence%20Completa."
-                           target="_blank" rel="noopener" class="sc-cta">Solicitar este serviço</a>
+                        <a href="https://www.viris.com.br/verificacao-empresarial?produto=agro"
+                           target="_blank" rel="noopener" class="sc-cta">Fazer verificação</a>
                     </div>
 
                 </div>
@@ -1646,10 +1661,9 @@
                     </p>
                     <p class="persona-products-label">Serviços recomendados</p>
                     <div class="persona-tags">
-                        <span class="persona-tag">Consulta Avulsa</span>
-                        <span class="persona-tag">Report Smart</span>
-                        <span class="persona-tag">Strix Full</span>
-                        <span class="persona-tag">Due Diligence Básica</span>
+                        <span class="persona-tag">PF Essencial</span>
+                        <span class="persona-tag">Consulta PJ</span>
+                        <span class="persona-tag">Integridade Rural (Agro)</span>
                     </div>
                     </div><!-- /persona-card-body -->
                 </div>
@@ -1662,18 +1676,18 @@
                     <p class="persona-stat">75 milhões</p>
                     <span class="persona-stat-label">De processos ativos no Brasil (CNJ, 2024)</span>
                     <p class="persona-pain">
-                        Seus clientes precisam cobrar dívidas, encontrar bens em processos
-                        de herança e saber se a outra parte é de confiança antes de fechar acordos.
+                        Antes de fechar um acordo, aceitar uma proposta ou assumir um novo cliente,
+                        você precisa saber se a outra parte tem processos, dívidas ou sócios
+                        problemáticos que podem comprometer a negociação.
                     </p>
                     <p class="persona-trigger">
-                        "Saber onde estão os bens do devedor acelera o acordo e muda o resultado."
+                        "Saber a situação real da outra parte antes de assinar evita um acordo que vira dor de cabeça depois."
                     </p>
                     <p class="persona-products-label">Serviços recomendados</p>
                     <div class="persona-tags">
-                        <span class="persona-tag">Strix Full</span>
-                        <span class="persona-tag">Dossiê Strix</span>
-                        <span class="persona-tag">Due Diligence Básica</span>
-                        <span class="persona-tag">Due Diligence Completa</span>
+                        <span class="persona-tag">PF Essencial</span>
+                        <span class="persona-tag">Consulta PJ</span>
+                        <span class="persona-tag">Combo PJ (PJ+PF)</span>
                     </div>
                     </div><!-- /persona-card-body -->
                 </div>
@@ -1694,9 +1708,8 @@
                     </p>
                     <p class="persona-products-label">Serviços recomendados</p>
                     <div class="persona-tags">
-                        <span class="persona-tag">Report Smart</span>
-                        <span class="persona-tag">Due Diligence Básica</span>
-                        <span class="persona-tag">Due Diligence Completa</span>
+                        <span class="persona-tag">Consulta PJ</span>
+                        <span class="persona-tag">Combo PJ (PJ+PF)</span>
                     </div>
                     </div><!-- /persona-card-body -->
                 </div>
@@ -1717,13 +1730,60 @@
                     </p>
                     <p class="persona-products-label">Serviços recomendados</p>
                     <div class="persona-tags">
-                        <span class="persona-tag">Consulta Avulsa</span>
-                        <span class="persona-tag">Report Smart</span>
-                        <span class="persona-tag">Strix Full</span>
+                        <span class="persona-tag">PF Essencial</span>
+                        <span class="persona-tag">Consulta PJ</span>
                     </div>
                     </div><!-- /persona-card-body -->
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================================================================
+         QUANTO CUSTA NÃO VERIFICAR (ancoragem de valor)
+    ================================================================ -->
+    <section id="ancoragem">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Antes de decidir</span>
+                <h2 class="section-title">Quanto custa não verificar?</h2>
+                <p class="section-sub">
+                    Coloque na balança: o custo de uma consulta Strix contra o custo
+                    de uma decisão tomada no escuro.
+                </p>
+            </div>
+
+            <div class="anchor-grid">
+                <div class="anchor-bad">
+                    <p class="anchor-bad-title">O custo de não verificar</p>
+                    <div class="anchor-item">
+                        <span class="anchor-item-label">Venda de safra para comprador com dívidas ocultas</span>
+                        <span class="anchor-item-value">R$ 180 mil em média</span>
+                    </div>
+                    <div class="anchor-item">
+                        <span class="anchor-item-label">Sociedade fechada com quem tem passivo oculto</span>
+                        <span class="anchor-item-value">Inestimável</span>
+                    </div>
+                    <div class="anchor-item">
+                        <span class="anchor-item-label">Processo de despejo de inquilino problemático</span>
+                        <span class="anchor-item-value">12 a 18 meses</span>
+                    </div>
+                    <div class="anchor-item">
+                        <span class="anchor-item-label">Advogado para tentar recuperar o que foi perdido</span>
+                        <span class="anchor-item-value">R$ 10k–50k</span>
+                    </div>
+                </div>
+
+                <div class="anchor-good">
+                    <p class="anchor-good-label">O custo de verificar com a Strix</p>
+                    <p class="anchor-good-price">R$ 97</p>
+                    <p class="anchor-good-sub">a partir de · pronto em minutos</p>
+                    <a href="#servicos" class="btn btn-dark" style="margin:0 auto;">
+                        Ver serviços e preços
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1737,40 +1797,43 @@
             <div class="section-header">
                 <span class="section-label">Processo</span>
                 <h2 class="section-title">Como funciona</h2>
-                <p class="section-sub">Do primeiro contato à decisão informada, em quatro etapas.</p>
+                <p class="section-sub">
+                    Da escolha do produto ao relatório na sua mão, em quatro etapas automáticas.
+                    O Acompanhamento Operacional segue fluxo próprio de agendamento pelo WhatsApp.
+                </p>
             </div>
 
             <div class="process-grid">
                 <div class="process-step reveal">
                     <p class="ps-num">01</p>
-                    <h3 class="ps-title">Você solicita o serviço</h3>
+                    <h3 class="ps-title">Escolha o produto e preencha os dados</h3>
                     <p class="ps-desc">
-                        Entre em contato pelo WhatsApp, formulário ou Instagram. Informe o CPF,
-                        CNPJ ou nome e o serviço desejado. Em caso de dúvida, orientamos sem custo.
+                        Selecione a verificação que você precisa e informe o CPF ou CNPJ a ser
+                        consultado. Não sabe qual escolher? Fale com a equipe pelo WhatsApp, sem custo.
                     </p>
                 </div>
                 <div class="process-step reveal">
                     <p class="ps-num">02</p>
-                    <h3 class="ps-title">Analisamos e coletamos</h3>
+                    <h3 class="ps-title">Pague com Pix ou cartão</h3>
                     <p class="ps-desc">
-                        Nossa equipe acessa fontes abertas, públicas e legais. Cruzamos dados,
-                        identificamos conexões e verificamos informações com metodologia técnica.
+                        Pagamento online e seguro pelo Mercado Pago. Assim que é aprovado,
+                        a verificação já começa a rodar.
                     </p>
                 </div>
                 <div class="process-step reveal">
                     <p class="ps-num">03</p>
-                    <h3 class="ps-title">Entregamos o relatório</h3>
+                    <h3 class="ps-title">O sistema pesquisa nas fontes oficiais</h3>
                     <p class="ps-desc">
-                        Você recebe um PDF estruturado dentro do prazo contratado. Relatórios
-                        executivos incluem índice, análise e conclusão técnica assinada.
+                        Consultamos automaticamente a Justiça, a Receita Federal, bureaus de
+                        crédito e portais governamentais. Tudo dentro da lei, tudo cruzado.
                     </p>
                 </div>
                 <div class="process-step reveal">
                     <p class="ps-num">04</p>
-                    <h3 class="ps-title">Você decide com segurança</h3>
+                    <h3 class="ps-title">Você recebe o relatório em minutos</h3>
                     <p class="ps-desc">
-                        Com informação precisa em mãos, você negocia, contrata ou recusa com
-                        base em dados reais, não em suposições.
+                        Um PDF organizado chega no seu e-mail assim que a análise termina.
+                        Pronto para decidir com informação real na mão.
                     </p>
                 </div>
             </div>
@@ -1812,9 +1875,11 @@
                     </button>
                     <div class="faq-body">
                         <div class="faq-body-inner">
-                            Sim. Todos os serviços de Inteligência de Dados podem ser aplicados tanto a
-                            CPF (pessoa física) quanto a CNPJ (pessoa jurídica). Informe o tipo de análise
-                            necessária no momento do contato.
+                            Sim, depende do produto: a PF Essencial verifica uma pessoa física (CPF),
+                            a Consulta PJ verifica uma empresa (CNPJ), o Combo PJ verifica os dois
+                            juntos (empresa e responsável) e a Integridade Rural aceita CPF (produtor)
+                            ou CNPJ (empresa do agro). Escolha o produto de acordo com o que você
+                            precisa consultar.
                         </div>
                     </div>
                 </div>
@@ -1827,10 +1892,9 @@
                     <div class="faq-body">
                         <div class="faq-body-inner">
                             Toda a coleta é feita exclusivamente em fontes abertas e públicas: sistemas
-                            do Judiciário, Receita Federal, CNJ, cartórios de registro de imóveis, DETRAN,
-                            Serasa, portais de transparência pública, internet e bases de dados autorizadas.
-                            Não utilizamos nenhum método ilegal, nenhum acesso não autorizado e nenhuma
-                            prerrogativa funcional.
+                            do Judiciário, Receita Federal, CNJ, bureaus de crédito, IBAMA, PGFN e
+                            portais de transparência pública. Não utilizamos nenhum método ilegal,
+                            nenhum acesso não autorizado e nenhuma prerrogativa funcional.
                         </div>
                     </div>
                 </div>
@@ -1857,10 +1921,11 @@
                     </button>
                     <div class="faq-body">
                         <div class="faq-body-inner">
-                            Os prazos variam por produto: Consulta Avulsa em até 2h úteis; Report Smart
-                            e Strix Full em até 24h úteis; Dossiê Strix em 48–72h úteis; Due Diligence
-                            Básica em 3–5 dias úteis; Due Diligence Completa em 5–7 dias úteis. Os prazos
-                            contam a partir da confirmação do pagamento.
+                            Os relatórios de Inteligência de Dados (PF Essencial, Consulta PJ, Combo PJ
+                            e Integridade Rural) são automáticos: a busca começa assim que o pagamento
+                            é aprovado e o PDF chega no seu e-mail em minutos. Já o Acompanhamento
+                            Operacional depende de agendamento prévio (24h ou 48h de antecedência,
+                            conforme a cobertura).
                         </div>
                     </div>
                 </div>
@@ -1872,11 +1937,11 @@
                     </button>
                     <div class="faq-body">
                         <div class="faq-body-inner">
-                            Não. Cada produto resolve um nível específico de necessidade. Para contratar
-                            um funcionário, a Consulta Avulsa pode ser suficiente. Para investigar um
-                            comprador de safra, o Report Smart resolve. Para execução judicial ou partilha,
-                            o Strix Full ou Dossiê Strix são mais adequados. Se não souber qual escolher,
-                            entre em contato, que orientamos sem custo.
+                            Não. A PF Essencial já resolve uma checagem rápida de pessoa física.
+                            A Consulta PJ é para verificar uma empresa. O Combo PJ junta os dois
+                            quando você precisa avaliar a empresa e o responsável ao mesmo tempo.
+                            E a Integridade Rural é voltada para quem lida com produção agropecuária.
+                            Se não souber qual escolher, entre em contato, que orientamos sem custo.
                         </div>
                     </div>
                 </div>
@@ -1890,8 +1955,8 @@
                         <div class="faq-body-inner">
                             O pagamento é feito antes de começarmos o serviço. Aceitamos Pix à vista
                             e cartão de crédito parcelado em até 12x via Mercado Pago.
-                            Após a confirmação do pagamento, iniciamos na hora.
-                            Dúvidas sobre pagamento? Fale pelo WhatsApp.
+                            Para os relatórios automáticos, a busca começa assim que o pagamento é
+                            aprovado. Dúvidas sobre pagamento? Fale pelo WhatsApp.
                         </div>
                     </div>
                 </div>
@@ -1934,10 +1999,11 @@
                     </button>
                     <div class="faq-body">
                         <div class="faq-body-inner">
-                            O canal principal é o WhatsApp Business: (35) 99712-0007. Você também pode
-                            usar o formulário nesta página ou o Instagram @strixinteligenciaeseguranca.
-                            Nossa equipe responde em horário comercial e orienta sobre o serviço mais
-                            adequado para sua necessidade.
+                            Para os relatórios de Inteligência de Dados, é 100% online: escolha o
+                            produto na seção de serviços, informe o CPF ou CNPJ e pague com Pix ou
+                            cartão. O relatório chega automaticamente por e-mail. Para o Acompanhamento
+                            Operacional ou dúvidas, use o WhatsApp Business (35) 99712-0007, o formulário
+                            nesta página ou o Instagram @strixinteligenciaeseguranca.
                         </div>
                     </div>
                 </div>
@@ -2032,12 +2098,10 @@
                             <label class="form-label">Serviço de interesse</label>
                             <select class="form-select">
                                 <option value="">Selecione um serviço</option>
-                                <option>Consulta Avulsa · R$ 100</option>
-                                <option>Report Smart · R$ 280</option>
-                                <option>Strix Full · R$ 400</option>
-                                <option>Dossiê Strix · R$ 750</option>
-                                <option>Due Diligence Básica · R$ 990</option>
-                                <option>Due Diligence Completa · R$ 1.500</option>
+                                <option>PF Essencial · R$ 97</option>
+                                <option>Consulta PJ · R$ 297</option>
+                                <option>Combo PJ (PJ+PF) · R$ 397</option>
+                                <option>Integridade Rural (Agro) · R$ 397</option>
                                 <option>Acompanhamento Urbano · R$ 300</option>
                                 <option>Acompanhamento Regional · R$ 500</option>
                                 <option>Não sei, quero orientação</option>
@@ -2102,12 +2166,10 @@
                 <div>
                     <p class="footer-col-title">Serviços</p>
                     <ul class="footer-links">
-                        <li><a href="#servicos">Consulta Avulsa</a></li>
-                        <li><a href="#servicos">Report Smart</a></li>
-                        <li><a href="#servicos">Strix Full</a></li>
-                        <li><a href="#servicos">Dossiê Strix</a></li>
-                        <li><a href="#servicos">Due Diligence Básica</a></li>
-                        <li><a href="#servicos">Due Diligence Completa</a></li>
+                        <li><a href="#servicos">PF Essencial</a></li>
+                        <li><a href="#servicos">Consulta PJ</a></li>
+                        <li><a href="#servicos">Combo PJ (PJ+PF)</a></li>
+                        <li><a href="#servicos">Integridade Rural (Agro)</a></li>
                         <li><a href="#servicos">Acompanhamento</a></li>
                     </ul>
                 </div>
@@ -2120,7 +2182,7 @@
                         <li><a href="#como-funciona">Como funciona</a></li>
                         <li><a href="#faq">Perguntas frequentes</a></li>
                         <li><a href="#contato">Contato</a></li>
-                        <li><a href="vendas.html" style="font-weight:600;color:var(--white);">Ver Preços</a></li>
+                        <li><a href="#servicos" style="font-weight:600;color:var(--white);">Ver Preços</a></li>
                     </ul>
                 </div>
 
